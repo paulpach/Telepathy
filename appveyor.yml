@@ -60,7 +60,7 @@ deploy:
 
 deploy_script:
   - git config --global credential.helper "store"
-  - ps: Add-Content "$HOME\.git-credentials" "https://$($env:github_access_token):x-oauth-basic@github.com`n"
+  - echo "https://$($env:github_access_token):x-oauth-basic@github.com" > "~\.git-credentials"
   - git config --global user.email %github_email%
   - git config --global user.name "Paul Pacheco"
   - git config --list --show-origin
