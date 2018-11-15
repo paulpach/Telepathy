@@ -7,7 +7,7 @@ Set-Variable -Name SOURCE_DIR "$PWD"
 Set-Variable -Name TEMP_REPO_DIR "$PWD\..\telepathy-gh-pages"
 
 echo "Removing temporary doc directory $TEMP_REPO_DIR"
-Remove-Item -path $TEMP_REPO_DIR -recursive –force
+Remove-Item -path $TEMP_REPO_DIR -recursive -force
 New-Item -ItemType directory -Path $TEMP_REPO_DIR
 
 
