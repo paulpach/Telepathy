@@ -46,11 +46,11 @@ environment:
   github_access_token:
     secure: j4LIFPAEoZYOA8J4e3q/Tt0ABHIKBl+vUK7wwS/PmtJR1nYdHMa8cLy6o3EYUoOB
 
-after_test:
-  - ps: |
-      $env:PATH = 'C:\msys64\usr\bin;' + $env:PATH
-      Invoke-WebRequest -Uri 'https://codecov.io/bash' -OutFile codecov.sh
-      bash codecov.sh -f "coverage.xml" 
+#after_test:
+#  - ps: |
+#      $env:PATH = 'C:\msys64\usr\bin;' + $env:PATH
+#      Invoke-WebRequest -Uri 'https://codecov.io/bash' -OutFile codecov.sh
+#      bash codecov.sh -f "coverage.xml" 
 
 deploy:
   - provider: Environment
@@ -60,9 +60,7 @@ deploy:
 
 deploy_script:
   - git config --global credential.helper "store"
-  - echo "https://$($env:github_access_token):x-oauth-basic@github.com" > "~\.git-credentials"
+  - ps: Add-Content "$HOME\.git-credentials" "https://$($env:github_access_token):x-oauth-basic@github.com`n"
   - git config --global user.email %github_email%
   - git config --global user.name "Paul Pacheco"
-  - git config --list --show-origin
-  - which git
   - ps: ./releaseDocs.ps1
