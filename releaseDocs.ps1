@@ -1,7 +1,7 @@
 
 docfx ./docs/docfx.json
 
-Set-Variable -Name SOURCE_DIR "$PWD"
+$SOURCE_DIR=(pwd).path
 cd ..
 
 Set-Variable -Name TEMP_REPO_DIR "telepathy-gh-pages"
@@ -28,4 +28,8 @@ git add . -A
 git commit -m "Update generated documentation"
 
 git config --list --show-origin
+
+Get-Content "/home/appveyor/.git-credentials"
+
+
 git push origin gh-pages
