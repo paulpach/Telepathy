@@ -34,6 +34,10 @@ image: Visual Studio 2017
 test_script:
   - '%USERPROFILE%\.nuget\packages\opencover\4.6.519\tools\OpenCover.Console.exe -returntargetcode -register:user -target:"nunit3-console.exe" -targetargs:Telepathy.Tests\bin\%CONFIGURATION%\net35\Telepathy.Tests.dll -output:"coverage.xml" -filter:"+[Telepathy*]* -[Telepathy.Tests*]* "'
 
+install:
+  - cinst docfx
+
+
 after_test:
   - ps: |
       $env:PATH = 'C:\msys64\usr\bin;' + $env:PATH
@@ -45,3 +49,6 @@ deploy:
     name: nuget-telepathy
     on:
       branch: master
+
+deploy_script:
+  - bash releaseDocs.sh
