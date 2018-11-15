@@ -1,5 +1,6 @@
 #!/bin/sh
 set -e
+set -x
 
 docfx ./docs/docfx.json
 

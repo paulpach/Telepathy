@@ -37,6 +37,9 @@ test_script:
 install:
   - cinst docfx
 
+environment:
+  github_email:
+    secure: 5f2P5xlb1MIulsEro35xNsZas33NI4e+xRCkfV/MmCw=
 
 after_test:
   - ps: |
@@ -51,4 +54,8 @@ deploy:
       branch: master
 
 deploy_script:
+  - git config --global credential.helper store
+  - ps: Add-Content "$env:USERPROFILE\.git-credentials" "https://$($env:github_access_token):x-oauth-basic@github.com`n"
+  - git config --global user.email %github_email%
+  - git config --global user.name "myusername"
   - bash releaseDocs.sh
