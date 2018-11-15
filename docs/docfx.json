@@ -3,10 +3,15 @@
     {
       "src": [
         {
+          "src": "../",
           "files": [
-            "Telepathy/**.csproj"
+            "Telepathy/Telepathy.csproj"
           ],
-          "cwd": ".."
+          "exclude": [
+            "**/bin/**",
+            "**/obj/**",
+            "_site/**"
+          ]
         }
       ],
       "dest": "api",
