@@ -62,7 +62,7 @@ namespace Telepathy.Tests
 
             // wait for successful connection
             Message connectMsg = NextMessage(client);
-            Assert.That(connectMsg.eventType, Is.EqualTo(EventType.Connected));
+            Assert.That(connectMsg, Is.AssignableFrom<ConnectMessage>());
             // disconnect and lets try again
             client.Disconnect();
 
@@ -71,7 +71,7 @@ namespace Telepathy.Tests
             client.Connect("127.0.0.1", port);
             // wait for successful connection
             connectMsg = NextMessage(client);
-            Assert.That(connectMsg.eventType, Is.EqualTo(EventType.Connected));
+            Assert.That(connectMsg, Is.AssignableFrom<ConnectMessage>());
 
             client.Disconnect();
         }
@@ -86,20 +86,19 @@ namespace Telepathy.Tests
 
             // we  should first receive a connected message
             Message connectMsg = NextMessage(server);
-            Assert.That(connectMsg.eventType, Is.EqualTo(EventType.Connected));
+            Assert.That(connectMsg, Is.AssignableFrom<ConnectMessage>());
 
 
             // then we should receive the data
             client.Send(utf8.GetBytes("Hello world"));
-            Message dataMsg = NextMessage(server);
-            Assert.That(dataMsg.eventType, Is.EqualTo(EventType.Data));
+            DataMessage dataMsg = (DataMessage)NextMessage(server);
             string str = utf8.GetString(dataMsg.data);
             Assert.That(str, Is.EqualTo("Hello world"));
 
             // finally when the client disconnect,  we should get a disconnected message
             client.Disconnect();
             Message disconnectMsg = NextMessage(server);
-            Assert.That(disconnectMsg.eventType, Is.EqualTo(EventType.Disconnected));
+            Assert.That(connectMsg, Is.AssignableFrom<DisconnectMessage>());
         }
 
         [Test]
@@ -116,19 +115,18 @@ namespace Telepathy.Tests
 
             // we  should first receive a connected message
             Message clientConnectMsg = NextMessage(client);
-            Assert.That(serverConnectMsg.eventType, Is.EqualTo(EventType.Connected));
+            Assert.That(serverConnectMsg, Is.AssignableFrom<ConnectMessage>());
 
             // Send some data to the client
             server.Send(id, utf8.GetBytes("Hello world"));
-            Message dataMsg = NextMessage(client);
-            Assert.That(dataMsg.eventType, Is.EqualTo(EventType.Data));
+            DataMessage dataMsg = (DataMessage)NextMessage(client) ;
             string str = utf8.GetString(dataMsg.data);
             Assert.That(str, Is.EqualTo("Hello world"));
 
             // finally if the server stops,  the clients should get a disconnect error
             server.Stop();
             Message disconnectMsg = NextMessage(client);
-            Assert.That(disconnectMsg.eventType, Is.EqualTo(EventType.Disconnected));
+            Assert.That(disconnectMsg, Is.AssignableFrom<DisconnectMessage>());
 
             client.Disconnect();
         }
@@ -144,8 +142,8 @@ namespace Telepathy.Tests
             Message serverConnectMsg = NextMessage(server);
             int id = serverConnectMsg.connectionId;
 
-            bool result = server.Disconnect(id);
-            Assert.That(result, Is.True);
+            server.Disconnect(id);
+
         }
 
         [Test]
@@ -157,19 +155,18 @@ namespace Telepathy.Tests
 
             // read connected message on client
             Message clientConnectedMsg = NextMessage(client);
-            Assert.That(clientConnectedMsg.eventType, Is.EqualTo(EventType.Connected));
+            Assert.That(clientConnectedMsg, Is.AssignableFrom<ConnectMessage>());
 
             // read connected message on server
             Message serverConnectMsg = NextMessage(server);
             int id = serverConnectMsg.connectionId;
 
             // server kicks the client
-            bool result = server.Disconnect(id);
-            Assert.That(result, Is.True);
+            server.Disconnect(id);
 
             // wait for client disconnected message
             Message clientDisconnectedMsg = NextMessage(client);
-            Assert.That(clientDisconnectedMsg.eventType, Is.EqualTo(EventType.Disconnected));
+            Assert.That(clientConnectedMsg, Is.AssignableFrom<DisconnectMessage>());
 
             // was everything cleaned perfectly?
             // if Connecting or Connected is still true then we wouldn't be able

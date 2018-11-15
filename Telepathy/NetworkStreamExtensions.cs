@@ -3,29 +3,14 @@ using System.Net.Sockets;
 
 public static class NetworkStreamExtensions
 {
-    // .Read returns '0' if remote closed the connection but throws an
-    // IOException if we voluntarily closed our own connection.
-    //
-    // lets's add a ReadSafely method that returns '0' in both cases so we don't
-    // have to worry about exceptions, since a disconnect is a disconnect...
-    public static int ReadSafely(this Stream stream, byte[] buffer, int offset, int size)
-    {
-        try
-        {
-            return stream.Read(buffer, offset, size);
-        }
-        catch (IOException)
-        {
-            return 0;
-        }
-    }
-
-    // helper function to read EXACTLY 'n' bytes
-    // -> default .Read reads up to 'n' bytes. this function reads exactly 'n'
-    //    bytes
-    // -> this is blocking until 'n' bytes were received
-    // -> immediately returns false in case of disconnects
-    public static bool ReadExactly(this Stream stream, byte[] buffer, int amount)
+    /// <summary>
+    /// Reads the exactly amount bytes
+    /// </summary>
+    /// <returns>the specified amount of bytes or null if end of file</returns>
+    /// <param name="stream">Stream.</param>
+    /// <param name="amount">Amount.</param>
+    /// <exception cref="System.IO.IOException">If there is any error</exception>
+    public static byte[] ReadExactly(this Stream stream, int amount)
     {
         // there might not be enough bytes in the TCP buffer for .Read to read
         // the whole amount at once, so we need to keep trying until we have all
@@ -36,20 +21,22 @@ public static class NetworkStreamExtensions
         //         if (stream.Read(buffer, i, 1) == 0)
         //             return false;
         //     return true;
+        byte[] buffer = new byte[amount];
+
         int bytesRead = 0;
         while (bytesRead < amount)
         {
             // read up to 'remaining' bytes with the 'safe' read extension
             int remaining = amount - bytesRead;
-            int result = stream.ReadSafely(buffer, bytesRead, remaining);
+            int result = stream.Read(buffer, bytesRead, remaining);
 
-            // .Read returns 0 if disconnected
+            // .Read returns 0 if EOF
             if (result == 0)
-                return false;
+                return null;
 
             // otherwise add to bytes read
             bytesRead += result;
         }
-        return true;
+        return buffer;
     }
 }

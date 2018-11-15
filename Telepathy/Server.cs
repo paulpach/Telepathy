@@ -7,42 +7,29 @@ using System.Threading;
 
 namespace Telepathy
 {
-    public class Server : Common
+    public class Server : Transport
     {
         // listener
         TcpListener listener;
         Thread listenerThread;
 
-        // clients with <connectionId, TcpClient>
-        SafeDictionary<int, TcpClient> clients = new SafeDictionary<int, TcpClient>();
+        // connectionId to connections
+        SafeDictionary<int, Connection> connections = new SafeDictionary<int, Connection>();
 
         public bool NoDelay = true;
+        public int MaxConnections = int.MaxValue;
 
         // connectionId counter
-        // (right now we only use it from one listener thread, but we might have
-        //  multiple threads later in case of WebSockets etc.)
-        // -> static so that another server instance doesn't start at 0 again.
-        static int counter = 0;
+        int connectionId = 0;
 
-        // public next id function in case someone needs to reserve an id
-        // (e.g. if hostMode should always have 0 connection and external
-        //  connections should start at 1, etc.)
-        public static int NextConnectionId()
+        int NextConnectionId()
         {
-            int id = Interlocked.Increment(ref counter);
-
-            // it's very unlikely that we reach the uint limit of 2 billion.
-            // even with 1 new connection per second, this would take 68 years.
-            // -> but if it happens, then we should throw an exception because
-            //    the caller probably should stop accepting clients.
-            // -> it's hardly worth using 'bool Next(out id)' for that case
-            //    because it's just so unlikely.
-            if (id == int.MaxValue)
+            unchecked
             {
-                throw new Exception("connection id limit reached: " + id);
+                // no problem if we overflow,  it will simply start from negatives
+                // the only requirement is there is no more than one connection with the same id
+                return Interlocked.Increment(ref connectionId);
             }
-
-            return id;
         }
 
         // check if the server is running
@@ -51,70 +38,25 @@ namespace Telepathy
             get { return listenerThread != null && listenerThread.IsAlive; }
         }
 
-        public TcpClient GetClient(int connectionId)
-        {
-            TcpClient client;
-            if (clients.TryGetValue(connectionId, out client))
-            {
-                return client;
-            }
-            return null;
-        }
-
         // the listener thread's listen function
-        void Listen(int port, int maxConnections)
+        void Listen(int port)
         {
             // absolutely must wrap with try/catch, otherwise thread
             // exceptions are silent
             try
             {
                 // start listener
-                listener = new TcpListener(new IPEndPoint(IPAddress.Any, port));
+                listener = new TcpListener(IPAddress.Any, port);
                 // NoDelay disables nagle algorithm. lowers CPU% and latency
                 // but increases bandwidth
                 listener.Server.NoDelay = this.NoDelay;
                 listener.Start();
-                Logger.Log("Server: listening port=" + port + " max=" + maxConnections);
+                Logger.Log("Server: listening port=" + port);
 
                 // keep accepting new clients
                 while (true)
                 {
-                    // wait and accept new client
-                    // note: 'using' sucks here because it will try to
-                    // dispose after thread was started but we still need it
-                    // in the thread
-                    TcpClient client = listener.AcceptTcpClient();
-
-                    // are more connections allowed?
-                    if (clients.Count < maxConnections)
-                    {
-                        // generate the next connection id (thread safely)
-                        int connectionId = NextConnectionId();
-
-                        // spawn a thread for each client to listen to his
-                        // messages
-                        Thread thread = new Thread(() =>
-                        {
-                            // add to dict immediately
-                            clients.Add(connectionId, client);
-
-                            // run the receive loop
-                            ReceiveLoop(connectionId, client);
-
-                            // remove client from clients dict afterwards
-                            clients.Remove(connectionId);
-                        });
-                        thread.IsBackground = true;
-                        thread.Start();
-                    }
-                    // connection limit reached. disconnect the client and show
-                    // a small log message so we know why it happened.
-                    // note: no extra Sleep because Accept is blocking anyway
-                    else
-                    {
-                        client.Close();
-                        Logger.Log("Server too full, disconnected a client");
-                    }
+                    Accept();
                 }
             }
             catch (ThreadAbortException exception)
@@ -131,14 +73,63 @@ namespace Telepathy
             }
             catch (Exception exception)
             {
+                messageQueue.Enqueue(new ErrorMessage(0, exception));
                 // something went wrong. probably important.
                 Logger.LogError("Server Exception: " + exception);
             }
         }
 
+        private void Accept()
+        {
+            // wait and accept new client
+            // note: 'using' sucks here because it will try to
+            // dispose after thread was started but we still need it
+            // in the thread
+            TcpClient client = listener.AcceptTcpClient();
+
+            // are more connections allowed?
+            if (connections.Count < MaxConnections)
+            {
+                // generate the next connection id (thread safely)
+                int connectionId = NextConnectionId();
+
+                Connection connection = new Connection();
+                connection.tcpClient = client;
+                connections.Add(connectionId, connection);
+
+                // spawn a thread for each client to listen to his
+                // messages
+                Thread thread = new Thread(() =>
+                {
+
+                    try
+                    {
+                        // run the receive loop
+                        ProcessMessages(connectionId, connection);
+
+                    }
+                    finally
+                    {
+                        // remove client from clients dict afterwards
+                        connections.Remove(connectionId);
+                    }
+                });
+                thread.IsBackground = true;
+                thread.Start();
+            }
+            // connection limit reached. disconnect the client and show
+            // a small log message so we know why it happened.
+            // note: no extra Sleep because Accept is blocking anyway
+            else
+            {
+                client.Close();
+                Logger.Log("Server too full, disconnected a client");
+            }
+        }
+
         // start listening for new connections in a background thread and spawn
         // a new thread for each one.
-        public void Start(int port, int maxConnections = int.MaxValue)
+        public void Start(int port)
         {
             // not if already started
             if (Active) return;
@@ -150,13 +141,13 @@ namespace Telepathy
             messageQueue.Clear();
 
             // start the listener thread
-            Logger.Log("Server: Start port=" + port + " max=" + maxConnections);
-            listenerThread = new Thread(() => { Listen(port, maxConnections); });
+            Logger.Log("Server: Start port=" + port);
+            listenerThread = new Thread(() => { Listen(port); });
             listenerThread.IsBackground = true;
             listenerThread.Start();
         }
 
-        public void Stop()
+        public virtual void Stop()
         {
             // only if started
             if (!Active) return;
@@ -168,70 +159,39 @@ namespace Telepathy
             listener.Stop();
 
             // close all client connections
-            List<TcpClient> connections = clients.GetValues();
-            foreach (TcpClient client in connections)
+            foreach (Connection connection in connections.GetValues())
             {
-                // close the stream if not closed yet. it may have been closed
-                // by a disconnect already, so use try/catch
-                try { GetStream(client).Close(); } catch {}
-                client.Close();
+                connection.Close();
             }
 
             // clear clients list
-            clients.Clear();
+            connections.Clear();
         }
 
         // send message to client using socket connection.
-        public bool Send(int connectionId, byte[] data)
+        public void Send(int connectionId, byte[] data)
         {
-            // find the connection
-            TcpClient client;
-            if (clients.TryGetValue(connectionId, out client))
-            {
-                // GetStream() might throw exception if client is disconnected
-                try
-                {
-                    Stream stream = GetStream(client);
-                    return SendMessage(stream, data);
-                }
-                catch (Exception exception)
-                {
-                    Logger.LogWarning("Server.Send exception: " + exception);
-                    return false;
-                }
-            }
-            Logger.LogWarning("Server.Send: invalid connectionId: " + connectionId);
-            return false;
-        }
+            Connection connection;
 
-        // get connection info in case it's needed (IP etc.)
-        // (we should never pass the TcpClient to the outside)
-        public bool GetConnectionInfo(int connectionId, out string address)
-        {
-            // find the connection
-            TcpClient client;
-            if (clients.TryGetValue(connectionId, out client))
+            if (connections.TryGetValue(connectionId, out connection))
             {
-                address = ((IPEndPoint)client.Client.RemoteEndPoint).Address.ToString();
-                return true;
+                connection.SendMessage(data);
             }
-            address = null;
-            return false;
+            else
+            {
+                throw new IOException("Invalid connection " + connectionId);
+            }
         }
 
         // disconnect (kick) a client
-        public bool Disconnect(int connectionId)
+        public void Disconnect(int connectionId)
         {
-            // find the connection
-            TcpClient client;
-            if (clients.TryGetValue(connectionId, out client))
+            Connection connection;
+
+            if (connections.TryGetValue(connectionId, out connection))
             {
-                // just close it. client thread will take care of the rest.
-                client.Close();
-                Logger.Log("Server.Disconnect connectionId:" + connectionId);
-                return true;
+                connection.Close();
             }
-            return false;
         }
     }
 }

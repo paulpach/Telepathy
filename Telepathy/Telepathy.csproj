@@ -3,6 +3,7 @@
   <PropertyGroup>
     <TargetFrameworks>net35;netstandard2.0</TargetFrameworks>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <Authors>Vis2K; Paul</Authors>
     <Company>Telepathy</Company>
     <NeutralLanguage>en-US</NeutralLanguage>
@@ -10,4 +11,7 @@
     <Description>TCP based transport for use in Unity</Description>
     <Version>1.0.0</Version>
   </PropertyGroup>
+  <ItemGroup>
+    <Compile Remove="EventType.cs" />
+  </ItemGroup>
 </Project>

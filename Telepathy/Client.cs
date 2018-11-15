@@ -5,40 +5,61 @@ using System.Threading;
 
 namespace Telepathy
 {
-    public class Client : Common
+    public class Client : Transport
     {
-        public TcpClient client;
+        /// <summary>
+        /// The connection to the server
+        /// </summary>
+        public Connection connection;
+
         Thread thread;
 
+        /// <summary>
+        /// Creates a Tcp client with the default connection
+        /// </summary>
+        public Client()
+        {
+            connection = new Connection();
+        }
+
+        /// <summary>
+        /// Creates a Tcp client with a user provided connection
+        /// </summary>
+        /// <param name="connection">Connection object to be used</param>
+        public Client(Connection connection)
+        {
+            this.connection = connection;
+        }
+
+        /// <summary>
+        /// Determines if we are connected to the server
+        /// </summary>
+        /// <value><c>true</c> if connected; otherwise, <c>false</c>.</value>
         public bool Connected
         {
             get
             {
+
                 // TcpClient.Connected doesn't check if socket != null, which
                 // results in NullReferenceExceptions if connection was closed.
                 // -> let's check it manually instead
-                return client != null &&
-                       client.Client != null &&
-                       client.Client.Connected;
+                return connection.status == Connection.Status.Connected;
             }
         }
 
         public bool NoDelay = true;
 
-        // TcpClient has no 'connecting' state to check. We need to keep track
-        // of it manually.
-        // -> checking 'thread.IsAlive && !Connected' is not enough because. the
-        //    thread is alive and connected is false for a short moment after
-        //    disconnecting, so this would cause race conditions.
-        // -> we use a threadsafe bool wrapper so that ThreadFunction can remain
-        //    static (it needs a common lock)
-        // => Connecting is true from first Connect() call in here, through the
-        //    thread start, until TcpClient.Connect() returns. Simple and clear.
-        // => bools are atomic according to  
-        //    https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/language-specification/variables
-        //    made volatile so the compiler does not reorder access to it
-        volatile bool _Connecting;
-        public bool Connecting { get { return _Connecting; } }
+        /// <summary>
+        /// Gets a value indicating whether this <see cref="T:Telepathy.Client"/> is connecting.
+        /// </summary>
+        /// <value><c>true</c> if connecting; otherwise, <c>false</c>.</value>
+        public bool Connecting 
+        { 
+            get 
+            {
+                return connection.status == Connection.Status.Connected;
+            } 
+        }
 
         // the thread function
         void ThreadFunction(string ip, int port)
@@ -47,14 +68,13 @@ namespace Telepathy
             // exceptions are silent
             try
             {
-                // connect (blocking)
-                client.Connect(ip, port);
-                _Connecting = false;
+                connection.tcpClient.Connect(ip, port);
 
-                // run the receive loop
-                ReceiveLoop(0, client, messageQueue);
+                connection.status = Connection.Status.Connected;
+
+                ProcessMessages(0, connection);
             }
-            catch (SocketException exception)
+            catch (Exception exception)
             {
                 // this happens if (for example) the ip address is correct
                 // but there is no server running on that ip/port
@@ -62,45 +82,30 @@ namespace Telepathy
 
                 // add 'Disconnected' event to message queue so that the caller
                 // knows that the Connect failed. otherwise they will never know
-                messageQueue.Enqueue(new Message(0, EventType.Disconnected, null));
-            }
-            catch (Exception exception)
-            {
-                // something went wrong. probably important.
-                Logger.LogError("Client Exception: " + exception);
-            }
+                messageQueue.Enqueue(new ErrorMessage(0, exception));
 
-            // Connect might have failed. thread might have been closed.
-            // let's reset connecting state no matter what.
-            _Connecting = false;
-
-            // if we got here then we are done. ReceiveLoop cleans up already,
-            // but we may never get there if connect fails. so let's clean up
-            // here too.
-            client.Close();
+                connection.status = Connection.Status.Disconnected;
+            }
         }
 
         public void Connect(string ip, int port)
         {
             // not if already started
-            if (Connecting || Connected) return;
+            if (connection.status != Connection.Status.Disconnected)
+                return;
 
-            // We are connecting from now until Connect succeeds or fails
-            _Connecting = true;
 
-            // TcpClient can only be used once. need to create a new one each
-            // time.
-            client = new TcpClient();
-
-            // NoDelay disables nagle algorithm. lowers CPU% and latency
-            // but increases bandwidth
-            client.NoDelay = this.NoDelay;
+            connection.status = Connection.Status.Connecting;
 
             // clear old messages in queue, just to be sure that the caller
             // doesn't receive data from last time and gets out of sync.
             // -> calling this in Disconnect isn't smart because the caller may
             //    still want to process all the latest messages afterwards
             messageQueue.Clear();
+
+            TcpClient tcpClient = new TcpClient();
+            tcpClient.NoDelay = NoDelay;
+            connection.tcpClient = tcpClient;
 
             // client.Connect(ip, port) is blocking. let's call it in the thread
             // and return immediately.
@@ -115,29 +120,24 @@ namespace Telepathy
 
         public virtual void Disconnect()
         {
-            // only if started
-            if (Connecting || Connected)
-            {
-                // close client
-                client.Close();
+            connection.Close();
 
-                // wait until thread finished. this is the only way to guarantee
-                // that we can call Connect() again immediately after Disconnect
-                if (thread != null)
-                    thread.Join();
-
-                Logger.Log("Client: disconnected");
-            }
+            // wait until thread finished. this is the only way to guarantee
+            // that we can call Connect() again immediately after Disconnect
+            if (thread != null)
+                thread.Join();
         }
 
-        public bool Send(byte[] data)
+        public void Send(byte[] data)
         {
             if (Connected)
             {
-                return SendMessage(GetStream(client), data);
+                connection.SendMessage(data);
             }
-            Logger.LogWarning("Client.Send: not connected!");
-            return false;
+            else
+            {
+                throw new IOException("Cannot send message, client not connected");
+            }
         }
     }
 }
