@@ -1,14 +1,15 @@
 
 docfx ./docs/docfx.json
 
-Get-Content -path "$HOME/.git-credentials"
+Get-Content -path "$HOME\.git-credentials"
 
-SOURCE_DIR=$PWD
-TEMP_REPO_DIR=$PWD/../telepathy-gh-pages
+Set-Variable -Name SOURCE_DIR "$PWD"
+Set-Variable -Name TEMP_REPO_DIR "$PWD\..\telepathy-gh-pages"
 
 echo "Removing temporary doc directory $TEMP_REPO_DIR"
-rm -rf $TEMP_REPO_DIR
-mkdir $TEMP_REPO_DIR
+Remove-Item -path $TEMP_REPO_DIR -recursive –force
+New-Item -ItemType directory -Path $TEMP_REPO_DIR
+
 
 echo "Cloning the repo with the gh-pages branch"
 git clone https://github.com/paulpach/Telepathy.git --branch gh-pages $TEMP_REPO_DIR
