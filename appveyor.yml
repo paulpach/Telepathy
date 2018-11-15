@@ -40,7 +40,9 @@ install:
 environment:
   github_email:
     secure: 5f2P5xlb1MIulsEro35xNsZas33NI4e+xRCkfV/MmCw=
-
+  github_access_token:
+    secure: j4LIFPAEoZYOA8J4e3q/Tt0ABHIKBl+vUK7wwS/PmtJR1nYdHMa8cLy6o3EYUoOB
+    
 after_test:
   - ps: |
       $env:PATH = 'C:\msys64\usr\bin;' + $env:PATH
