@@ -46,11 +46,9 @@ environment:
   github_access_token:
     secure: j4LIFPAEoZYOA8J4e3q/Tt0ABHIKBl+vUK7wwS/PmtJR1nYdHMa8cLy6o3EYUoOB
 
-#after_test:
-#  - ps: |
-#      $env:PATH = 'C:\msys64\usr\bin;' + $env:PATH
-#      Invoke-WebRequest -Uri 'https://codecov.io/bash' -OutFile codecov.sh
-#      bash codecov.sh -f "coverage.xml" 
+after_test:
+  - ps: Invoke-WebRequest -Uri 'https://codecov.io/bash' -OutFile codecov.sh
+  - bash codecov.sh -f "coverage.xml" 
 
 deploy:
   - provider: Environment
