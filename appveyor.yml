@@ -60,4 +60,4 @@ deploy_script:
   - ps: Add-Content "$HOME\.git-credentials" "https://$($env:github_access_token):x-oauth-basic@github.com`n"
   - git config --global user.email %github_email%
   - git config --global user.name "Paul Pacheco"
-  - bash releaseDocs.sh
+  - ps: ./releaseDocs.ps1

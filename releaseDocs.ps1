@@ -1,10 +1,7 @@
-#!/bin/sh
-set -e
-set -x
 
 docfx ./docs/docfx.json
 
-cat "$HOME/.git-credentials"
+Get-Content -path "$HOME/.git-credentials"
 
 SOURCE_DIR=$PWD
 TEMP_REPO_DIR=$PWD/../telepathy-gh-pages
