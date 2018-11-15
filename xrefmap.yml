@@ -1,0 +1,616 @@
+### YamlMime:XRefMap
+sorted: true
+references:
+- uid: Telepathy
+  name: Telepathy
+  href: api/Telepathy.html
+  commentId: N:Telepathy
+  fullName: Telepathy
+  nameWithType: Telepathy
+- uid: Telepathy.Client
+  name: Client
+  href: api/Telepathy.Client.html
+  commentId: T:Telepathy.Client
+  fullName: Telepathy.Client
+  nameWithType: Client
+- uid: Telepathy.Client.client
+  name: client
+  href: api/Telepathy.Client.html#Telepathy_Client_client
+  commentId: F:Telepathy.Client.client
+  fullName: Telepathy.Client.client
+  nameWithType: Client.client
+- uid: Telepathy.Client.Connect(System.String,System.Int32)
+  name: Connect(String, Int32)
+  href: api/Telepathy.Client.html#Telepathy_Client_Connect_System_String_System_Int32_
+  commentId: M:Telepathy.Client.Connect(System.String,System.Int32)
+  fullName: Telepathy.Client.Connect(System.String, System.Int32)
+  nameWithType: Client.Connect(String, Int32)
+- uid: Telepathy.Client.Connect*
+  name: Connect
+  href: api/Telepathy.Client.html#Telepathy_Client_Connect_
+  commentId: Overload:Telepathy.Client.Connect
+  isSpec: "True"
+  fullName: Telepathy.Client.Connect
+  nameWithType: Client.Connect
+- uid: Telepathy.Client.Connected
+  name: Connected
+  href: api/Telepathy.Client.html#Telepathy_Client_Connected
+  commentId: P:Telepathy.Client.Connected
+  fullName: Telepathy.Client.Connected
+  nameWithType: Client.Connected
+- uid: Telepathy.Client.Connected*
+  name: Connected
+  href: api/Telepathy.Client.html#Telepathy_Client_Connected_
+  commentId: Overload:Telepathy.Client.Connected
+  isSpec: "True"
+  fullName: Telepathy.Client.Connected
+  nameWithType: Client.Connected
+- uid: Telepathy.Client.Connecting
+  name: Connecting
+  href: api/Telepathy.Client.html#Telepathy_Client_Connecting
+  commentId: P:Telepathy.Client.Connecting
+  fullName: Telepathy.Client.Connecting
+  nameWithType: Client.Connecting
+- uid: Telepathy.Client.Connecting*
+  name: Connecting
+  href: api/Telepathy.Client.html#Telepathy_Client_Connecting_
+  commentId: Overload:Telepathy.Client.Connecting
+  isSpec: "True"
+  fullName: Telepathy.Client.Connecting
+  nameWithType: Client.Connecting
+- uid: Telepathy.Client.Disconnect
+  name: Disconnect()
+  href: api/Telepathy.Client.html#Telepathy_Client_Disconnect
+  commentId: M:Telepathy.Client.Disconnect
+  fullName: Telepathy.Client.Disconnect()
+  nameWithType: Client.Disconnect()
+- uid: Telepathy.Client.Disconnect*
+  name: Disconnect
+  href: api/Telepathy.Client.html#Telepathy_Client_Disconnect_
+  commentId: Overload:Telepathy.Client.Disconnect
+  isSpec: "True"
+  fullName: Telepathy.Client.Disconnect
+  nameWithType: Client.Disconnect
+- uid: Telepathy.Client.NoDelay
+  name: NoDelay
+  href: api/Telepathy.Client.html#Telepathy_Client_NoDelay
+  commentId: F:Telepathy.Client.NoDelay
+  fullName: Telepathy.Client.NoDelay
+  nameWithType: Client.NoDelay
+- uid: Telepathy.Client.Send(System.Byte[])
+  name: Send(Byte[])
+  href: api/Telepathy.Client.html#Telepathy_Client_Send_System_Byte___
+  commentId: M:Telepathy.Client.Send(System.Byte[])
+  name.vb: Send(Byte())
+  fullName: Telepathy.Client.Send(System.Byte[])
+  fullName.vb: Telepathy.Client.Send(System.Byte())
+  nameWithType: Client.Send(Byte[])
+  nameWithType.vb: Client.Send(Byte())
+- uid: Telepathy.Client.Send*
+  name: Send
+  href: api/Telepathy.Client.html#Telepathy_Client_Send_
+  commentId: Overload:Telepathy.Client.Send
+  isSpec: "True"
+  fullName: Telepathy.Client.Send
+  nameWithType: Client.Send
+- uid: Telepathy.Common
+  name: Common
+  href: api/Telepathy.Common.html
+  commentId: T:Telepathy.Common
+  fullName: Telepathy.Common
+  nameWithType: Common
+- uid: Telepathy.Common.GetNextMessage(Telepathy.Message@)
+  name: GetNextMessage(out Message)
+  href: api/Telepathy.Common.html#Telepathy_Common_GetNextMessage_Telepathy_Message__
+  commentId: M:Telepathy.Common.GetNextMessage(Telepathy.Message@)
+  name.vb: GetNextMessage(ByRef Message)
+  fullName: Telepathy.Common.GetNextMessage(out Telepathy.Message)
+  fullName.vb: Telepathy.Common.GetNextMessage(ByRef Telepathy.Message)
+  nameWithType: Common.GetNextMessage(out Message)
+  nameWithType.vb: Common.GetNextMessage(ByRef Message)
+- uid: Telepathy.Common.GetNextMessage*
+  name: GetNextMessage
+  href: api/Telepathy.Common.html#Telepathy_Common_GetNextMessage_
+  commentId: Overload:Telepathy.Common.GetNextMessage
+  isSpec: "True"
+  fullName: Telepathy.Common.GetNextMessage
+  nameWithType: Common.GetNextMessage
+- uid: Telepathy.Common.messageQueue
+  name: messageQueue
+  href: api/Telepathy.Common.html#Telepathy_Common_messageQueue
+  commentId: F:Telepathy.Common.messageQueue
+  fullName: Telepathy.Common.messageQueue
+  nameWithType: Common.messageQueue
+- uid: Telepathy.Common.messageQueueSizeWarning
+  name: messageQueueSizeWarning
+  href: api/Telepathy.Common.html#Telepathy_Common_messageQueueSizeWarning
+  commentId: F:Telepathy.Common.messageQueueSizeWarning
+  fullName: Telepathy.Common.messageQueueSizeWarning
+  nameWithType: Common.messageQueueSizeWarning
+- uid: Telepathy.Common.ReadMessageBlocking(System.Net.Sockets.NetworkStream,System.Byte[]@)
+  name: ReadMessageBlocking(NetworkStream, out Byte[])
+  href: api/Telepathy.Common.html#Telepathy_Common_ReadMessageBlocking_System_Net_Sockets_NetworkStream_System_Byte____
+  commentId: M:Telepathy.Common.ReadMessageBlocking(System.Net.Sockets.NetworkStream,System.Byte[]@)
+  name.vb: ReadMessageBlocking(NetworkStream, ByRef Byte())
+  fullName: Telepathy.Common.ReadMessageBlocking(System.Net.Sockets.NetworkStream, out System.Byte[])
+  fullName.vb: Telepathy.Common.ReadMessageBlocking(System.Net.Sockets.NetworkStream, ByRef System.Byte())
+  nameWithType: Common.ReadMessageBlocking(NetworkStream, out Byte[])
+  nameWithType.vb: Common.ReadMessageBlocking(NetworkStream, ByRef Byte())
+- uid: Telepathy.Common.ReadMessageBlocking*
+  name: ReadMessageBlocking
+  href: api/Telepathy.Common.html#Telepathy_Common_ReadMessageBlocking_
+  commentId: Overload:Telepathy.Common.ReadMessageBlocking
+  isSpec: "True"
+  fullName: Telepathy.Common.ReadMessageBlocking
+  nameWithType: Common.ReadMessageBlocking
+- uid: Telepathy.Common.ReceiveLoop(System.Int32,System.Net.Sockets.TcpClient,Telepathy.SafeQueue{Telepathy.Message})
+  name: ReceiveLoop(Int32, TcpClient, SafeQueue<Message>)
+  href: api/Telepathy.Common.html#Telepathy_Common_ReceiveLoop_System_Int32_System_Net_Sockets_TcpClient_Telepathy_SafeQueue_Telepathy_Message__
+  commentId: M:Telepathy.Common.ReceiveLoop(System.Int32,System.Net.Sockets.TcpClient,Telepathy.SafeQueue{Telepathy.Message})
+  name.vb: ReceiveLoop(Int32, TcpClient, SafeQueue(Of Message))
+  fullName: Telepathy.Common.ReceiveLoop(System.Int32, System.Net.Sockets.TcpClient, Telepathy.SafeQueue<Telepathy.Message>)
+  fullName.vb: Telepathy.Common.ReceiveLoop(System.Int32, System.Net.Sockets.TcpClient, Telepathy.SafeQueue(Of Telepathy.Message))
+  nameWithType: Common.ReceiveLoop(Int32, TcpClient, SafeQueue<Message>)
+  nameWithType.vb: Common.ReceiveLoop(Int32, TcpClient, SafeQueue(Of Message))
+- uid: Telepathy.Common.ReceiveLoop*
+  name: ReceiveLoop
+  href: api/Telepathy.Common.html#Telepathy_Common_ReceiveLoop_
+  commentId: Overload:Telepathy.Common.ReceiveLoop
+  isSpec: "True"
+  fullName: Telepathy.Common.ReceiveLoop
+  nameWithType: Common.ReceiveLoop
+- uid: Telepathy.Common.SendMessage(System.Net.Sockets.NetworkStream,System.Byte[])
+  name: SendMessage(NetworkStream, Byte[])
+  href: api/Telepathy.Common.html#Telepathy_Common_SendMessage_System_Net_Sockets_NetworkStream_System_Byte___
+  commentId: M:Telepathy.Common.SendMessage(System.Net.Sockets.NetworkStream,System.Byte[])
+  name.vb: SendMessage(NetworkStream, Byte())
+  fullName: Telepathy.Common.SendMessage(System.Net.Sockets.NetworkStream, System.Byte[])
+  fullName.vb: Telepathy.Common.SendMessage(System.Net.Sockets.NetworkStream, System.Byte())
+  nameWithType: Common.SendMessage(NetworkStream, Byte[])
+  nameWithType.vb: Common.SendMessage(NetworkStream, Byte())
+- uid: Telepathy.Common.SendMessage*
+  name: SendMessage
+  href: api/Telepathy.Common.html#Telepathy_Common_SendMessage_
+  commentId: Overload:Telepathy.Common.SendMessage
+  isSpec: "True"
+  fullName: Telepathy.Common.SendMessage
+  nameWithType: Common.SendMessage
+- uid: Telepathy.EventType
+  name: EventType
+  href: api/Telepathy.EventType.html
+  commentId: T:Telepathy.EventType
+  fullName: Telepathy.EventType
+  nameWithType: EventType
+- uid: Telepathy.EventType.Connected
+  name: Connected
+  href: api/Telepathy.EventType.html#Telepathy_EventType_Connected
+  commentId: F:Telepathy.EventType.Connected
+  fullName: Telepathy.EventType.Connected
+  nameWithType: EventType.Connected
+- uid: Telepathy.EventType.Data
+  name: Data
+  href: api/Telepathy.EventType.html#Telepathy_EventType_Data
+  commentId: F:Telepathy.EventType.Data
+  fullName: Telepathy.EventType.Data
+  nameWithType: EventType.Data
+- uid: Telepathy.EventType.Disconnected
+  name: Disconnected
+  href: api/Telepathy.EventType.html#Telepathy_EventType_Disconnected
+  commentId: F:Telepathy.EventType.Disconnected
+  fullName: Telepathy.EventType.Disconnected
+  nameWithType: EventType.Disconnected
+- uid: Telepathy.Logger
+  name: Logger
+  href: api/Telepathy.Logger.html
+  commentId: T:Telepathy.Logger
+  fullName: Telepathy.Logger
+  nameWithType: Logger
+- uid: Telepathy.Logger.Log(System.String)
+  name: Log(String)
+  href: api/Telepathy.Logger.html#Telepathy_Logger_Log_System_String_
+  commentId: M:Telepathy.Logger.Log(System.String)
+  fullName: Telepathy.Logger.Log(System.String)
+  nameWithType: Logger.Log(String)
+- uid: Telepathy.Logger.Log*
+  name: Log
+  href: api/Telepathy.Logger.html#Telepathy_Logger_Log_
+  commentId: Overload:Telepathy.Logger.Log
+  isSpec: "True"
+  fullName: Telepathy.Logger.Log
+  nameWithType: Logger.Log
+- uid: Telepathy.Logger.LogError(System.String)
+  name: LogError(String)
+  href: api/Telepathy.Logger.html#Telepathy_Logger_LogError_System_String_
+  commentId: M:Telepathy.Logger.LogError(System.String)
+  fullName: Telepathy.Logger.LogError(System.String)
+  nameWithType: Logger.LogError(String)
+- uid: Telepathy.Logger.LogError*
+  name: LogError
+  href: api/Telepathy.Logger.html#Telepathy_Logger_LogError_
+  commentId: Overload:Telepathy.Logger.LogError
+  isSpec: "True"
+  fullName: Telepathy.Logger.LogError
+  nameWithType: Logger.LogError
+- uid: Telepathy.Logger.LogErrorMethod
+  name: LogErrorMethod
+  href: api/Telepathy.Logger.html#Telepathy_Logger_LogErrorMethod
+  commentId: F:Telepathy.Logger.LogErrorMethod
+  fullName: Telepathy.Logger.LogErrorMethod
+  nameWithType: Logger.LogErrorMethod
+- uid: Telepathy.Logger.LogMethod
+  name: LogMethod
+  href: api/Telepathy.Logger.html#Telepathy_Logger_LogMethod
+  commentId: F:Telepathy.Logger.LogMethod
+  fullName: Telepathy.Logger.LogMethod
+  nameWithType: Logger.LogMethod
+- uid: Telepathy.Logger.LogWarning(System.String)
+  name: LogWarning(String)
+  href: api/Telepathy.Logger.html#Telepathy_Logger_LogWarning_System_String_
+  commentId: M:Telepathy.Logger.LogWarning(System.String)
+  fullName: Telepathy.Logger.LogWarning(System.String)
+  nameWithType: Logger.LogWarning(String)
+- uid: Telepathy.Logger.LogWarning*
+  name: LogWarning
+  href: api/Telepathy.Logger.html#Telepathy_Logger_LogWarning_
+  commentId: Overload:Telepathy.Logger.LogWarning
+  isSpec: "True"
+  fullName: Telepathy.Logger.LogWarning
+  nameWithType: Logger.LogWarning
+- uid: Telepathy.Logger.LogWarningMethod
+  name: LogWarningMethod
+  href: api/Telepathy.Logger.html#Telepathy_Logger_LogWarningMethod
+  commentId: F:Telepathy.Logger.LogWarningMethod
+  fullName: Telepathy.Logger.LogWarningMethod
+  nameWithType: Logger.LogWarningMethod
+- uid: Telepathy.Message
+  name: Message
+  href: api/Telepathy.Message.html
+  commentId: T:Telepathy.Message
+  fullName: Telepathy.Message
+  nameWithType: Message
+- uid: Telepathy.Message.#ctor(System.Int32,Telepathy.EventType,System.Byte[])
+  name: Message(Int32, EventType, Byte[])
+  href: api/Telepathy.Message.html#Telepathy_Message__ctor_System_Int32_Telepathy_EventType_System_Byte___
+  commentId: M:Telepathy.Message.#ctor(System.Int32,Telepathy.EventType,System.Byte[])
+  name.vb: Message(Int32, EventType, Byte())
+  fullName: Telepathy.Message.Message(System.Int32, Telepathy.EventType, System.Byte[])
+  fullName.vb: Telepathy.Message.Message(System.Int32, Telepathy.EventType, System.Byte())
+  nameWithType: Message.Message(Int32, EventType, Byte[])
+  nameWithType.vb: Message.Message(Int32, EventType, Byte())
+- uid: Telepathy.Message.#ctor*
+  name: Message
+  href: api/Telepathy.Message.html#Telepathy_Message__ctor_
+  commentId: Overload:Telepathy.Message.#ctor
+  isSpec: "True"
+  fullName: Telepathy.Message.Message
+  nameWithType: Message.Message
+- uid: Telepathy.Message.connectionId
+  name: connectionId
+  href: api/Telepathy.Message.html#Telepathy_Message_connectionId
+  commentId: F:Telepathy.Message.connectionId
+  fullName: Telepathy.Message.connectionId
+  nameWithType: Message.connectionId
+- uid: Telepathy.Message.data
+  name: data
+  href: api/Telepathy.Message.html#Telepathy_Message_data
+  commentId: F:Telepathy.Message.data
+  fullName: Telepathy.Message.data
+  nameWithType: Message.data
+- uid: Telepathy.Message.eventType
+  name: eventType
+  href: api/Telepathy.Message.html#Telepathy_Message_eventType
+  commentId: F:Telepathy.Message.eventType
+  fullName: Telepathy.Message.eventType
+  nameWithType: Message.eventType
+- uid: Telepathy.SafeDictionary`2
+  name: SafeDictionary<TKey, TValue>
+  href: api/Telepathy.SafeDictionary-2.html
+  commentId: T:Telepathy.SafeDictionary`2
+  name.vb: SafeDictionary(Of TKey, TValue)
+  fullName: Telepathy.SafeDictionary<TKey, TValue>
+  fullName.vb: Telepathy.SafeDictionary(Of TKey, TValue)
+  nameWithType: SafeDictionary<TKey, TValue>
+  nameWithType.vb: SafeDictionary(Of TKey, TValue)
+- uid: Telepathy.SafeDictionary`2.Add(`0,`1)
+  name: Add(TKey, TValue)
+  href: api/Telepathy.SafeDictionary-2.html#Telepathy_SafeDictionary_2_Add__0__1_
+  commentId: M:Telepathy.SafeDictionary`2.Add(`0,`1)
+  fullName: Telepathy.SafeDictionary<TKey, TValue>.Add(TKey, TValue)
+  fullName.vb: Telepathy.SafeDictionary(Of TKey, TValue).Add(TKey, TValue)
+  nameWithType: SafeDictionary<TKey, TValue>.Add(TKey, TValue)
+  nameWithType.vb: SafeDictionary(Of TKey, TValue).Add(TKey, TValue)
+- uid: Telepathy.SafeDictionary`2.Add*
+  name: Add
+  href: api/Telepathy.SafeDictionary-2.html#Telepathy_SafeDictionary_2_Add_
+  commentId: Overload:Telepathy.SafeDictionary`2.Add
+  isSpec: "True"
+  fullName: Telepathy.SafeDictionary<TKey, TValue>.Add
+  fullName.vb: Telepathy.SafeDictionary(Of TKey, TValue).Add
+  nameWithType: SafeDictionary<TKey, TValue>.Add
+  nameWithType.vb: SafeDictionary(Of TKey, TValue).Add
+- uid: Telepathy.SafeDictionary`2.Clear
+  name: Clear()
+  href: api/Telepathy.SafeDictionary-2.html#Telepathy_SafeDictionary_2_Clear
+  commentId: M:Telepathy.SafeDictionary`2.Clear
+  fullName: Telepathy.SafeDictionary<TKey, TValue>.Clear()
+  fullName.vb: Telepathy.SafeDictionary(Of TKey, TValue).Clear()
+  nameWithType: SafeDictionary<TKey, TValue>.Clear()
+  nameWithType.vb: SafeDictionary(Of TKey, TValue).Clear()
+- uid: Telepathy.SafeDictionary`2.Clear*
+  name: Clear
+  href: api/Telepathy.SafeDictionary-2.html#Telepathy_SafeDictionary_2_Clear_
+  commentId: Overload:Telepathy.SafeDictionary`2.Clear
+  isSpec: "True"
+  fullName: Telepathy.SafeDictionary<TKey, TValue>.Clear
+  fullName.vb: Telepathy.SafeDictionary(Of TKey, TValue).Clear
+  nameWithType: SafeDictionary<TKey, TValue>.Clear
+  nameWithType.vb: SafeDictionary(Of TKey, TValue).Clear
+- uid: Telepathy.SafeDictionary`2.Count
+  name: Count
+  href: api/Telepathy.SafeDictionary-2.html#Telepathy_SafeDictionary_2_Count
+  commentId: P:Telepathy.SafeDictionary`2.Count
+  fullName: Telepathy.SafeDictionary<TKey, TValue>.Count
+  fullName.vb: Telepathy.SafeDictionary(Of TKey, TValue).Count
+  nameWithType: SafeDictionary<TKey, TValue>.Count
+  nameWithType.vb: SafeDictionary(Of TKey, TValue).Count
+- uid: Telepathy.SafeDictionary`2.Count*
+  name: Count
+  href: api/Telepathy.SafeDictionary-2.html#Telepathy_SafeDictionary_2_Count_
+  commentId: Overload:Telepathy.SafeDictionary`2.Count
+  isSpec: "True"
+  fullName: Telepathy.SafeDictionary<TKey, TValue>.Count
+  fullName.vb: Telepathy.SafeDictionary(Of TKey, TValue).Count
+  nameWithType: SafeDictionary<TKey, TValue>.Count
+  nameWithType.vb: SafeDictionary(Of TKey, TValue).Count
+- uid: Telepathy.SafeDictionary`2.GetValues
+  name: GetValues()
+  href: api/Telepathy.SafeDictionary-2.html#Telepathy_SafeDictionary_2_GetValues
+  commentId: M:Telepathy.SafeDictionary`2.GetValues
+  fullName: Telepathy.SafeDictionary<TKey, TValue>.GetValues()
+  fullName.vb: Telepathy.SafeDictionary(Of TKey, TValue).GetValues()
+  nameWithType: SafeDictionary<TKey, TValue>.GetValues()
+  nameWithType.vb: SafeDictionary(Of TKey, TValue).GetValues()
+- uid: Telepathy.SafeDictionary`2.GetValues*
+  name: GetValues
+  href: api/Telepathy.SafeDictionary-2.html#Telepathy_SafeDictionary_2_GetValues_
+  commentId: Overload:Telepathy.SafeDictionary`2.GetValues
+  isSpec: "True"
+  fullName: Telepathy.SafeDictionary<TKey, TValue>.GetValues
+  fullName.vb: Telepathy.SafeDictionary(Of TKey, TValue).GetValues
+  nameWithType: SafeDictionary<TKey, TValue>.GetValues
+  nameWithType.vb: SafeDictionary(Of TKey, TValue).GetValues
+- uid: Telepathy.SafeDictionary`2.Remove(`0)
+  name: Remove(TKey)
+  href: api/Telepathy.SafeDictionary-2.html#Telepathy_SafeDictionary_2_Remove__0_
+  commentId: M:Telepathy.SafeDictionary`2.Remove(`0)
+  fullName: Telepathy.SafeDictionary<TKey, TValue>.Remove(TKey)
+  fullName.vb: Telepathy.SafeDictionary(Of TKey, TValue).Remove(TKey)
+  nameWithType: SafeDictionary<TKey, TValue>.Remove(TKey)
+  nameWithType.vb: SafeDictionary(Of TKey, TValue).Remove(TKey)
+- uid: Telepathy.SafeDictionary`2.Remove*
+  name: Remove
+  href: api/Telepathy.SafeDictionary-2.html#Telepathy_SafeDictionary_2_Remove_
+  commentId: Overload:Telepathy.SafeDictionary`2.Remove
+  isSpec: "True"
+  fullName: Telepathy.SafeDictionary<TKey, TValue>.Remove
+  fullName.vb: Telepathy.SafeDictionary(Of TKey, TValue).Remove
+  nameWithType: SafeDictionary<TKey, TValue>.Remove
+  nameWithType.vb: SafeDictionary(Of TKey, TValue).Remove
+- uid: Telepathy.SafeDictionary`2.TryGetValue(`0,`1@)
+  name: TryGetValue(TKey, out TValue)
+  href: api/Telepathy.SafeDictionary-2.html#Telepathy_SafeDictionary_2_TryGetValue__0__1__
+  commentId: M:Telepathy.SafeDictionary`2.TryGetValue(`0,`1@)
+  name.vb: TryGetValue(TKey, ByRef TValue)
+  fullName: Telepathy.SafeDictionary<TKey, TValue>.TryGetValue(TKey, out TValue)
+  fullName.vb: Telepathy.SafeDictionary(Of TKey, TValue).TryGetValue(TKey, ByRef TValue)
+  nameWithType: SafeDictionary<TKey, TValue>.TryGetValue(TKey, out TValue)
+  nameWithType.vb: SafeDictionary(Of TKey, TValue).TryGetValue(TKey, ByRef TValue)
+- uid: Telepathy.SafeDictionary`2.TryGetValue*
+  name: TryGetValue
+  href: api/Telepathy.SafeDictionary-2.html#Telepathy_SafeDictionary_2_TryGetValue_
+  commentId: Overload:Telepathy.SafeDictionary`2.TryGetValue
+  isSpec: "True"
+  fullName: Telepathy.SafeDictionary<TKey, TValue>.TryGetValue
+  fullName.vb: Telepathy.SafeDictionary(Of TKey, TValue).TryGetValue
+  nameWithType: SafeDictionary<TKey, TValue>.TryGetValue
+  nameWithType.vb: SafeDictionary(Of TKey, TValue).TryGetValue
+- uid: Telepathy.SafeQueue`1
+  name: SafeQueue<T>
+  href: api/Telepathy.SafeQueue-1.html
+  commentId: T:Telepathy.SafeQueue`1
+  name.vb: SafeQueue(Of T)
+  fullName: Telepathy.SafeQueue<T>
+  fullName.vb: Telepathy.SafeQueue(Of T)
+  nameWithType: SafeQueue<T>
+  nameWithType.vb: SafeQueue(Of T)
+- uid: Telepathy.SafeQueue`1.Clear
+  name: Clear()
+  href: api/Telepathy.SafeQueue-1.html#Telepathy_SafeQueue_1_Clear
+  commentId: M:Telepathy.SafeQueue`1.Clear
+  fullName: Telepathy.SafeQueue<T>.Clear()
+  fullName.vb: Telepathy.SafeQueue(Of T).Clear()
+  nameWithType: SafeQueue<T>.Clear()
+  nameWithType.vb: SafeQueue(Of T).Clear()
+- uid: Telepathy.SafeQueue`1.Clear*
+  name: Clear
+  href: api/Telepathy.SafeQueue-1.html#Telepathy_SafeQueue_1_Clear_
+  commentId: Overload:Telepathy.SafeQueue`1.Clear
+  isSpec: "True"
+  fullName: Telepathy.SafeQueue<T>.Clear
+  fullName.vb: Telepathy.SafeQueue(Of T).Clear
+  nameWithType: SafeQueue<T>.Clear
+  nameWithType.vb: SafeQueue(Of T).Clear
+- uid: Telepathy.SafeQueue`1.Count
+  name: Count
+  href: api/Telepathy.SafeQueue-1.html#Telepathy_SafeQueue_1_Count
+  commentId: P:Telepathy.SafeQueue`1.Count
+  fullName: Telepathy.SafeQueue<T>.Count
+  fullName.vb: Telepathy.SafeQueue(Of T).Count
+  nameWithType: SafeQueue<T>.Count
+  nameWithType.vb: SafeQueue(Of T).Count
+- uid: Telepathy.SafeQueue`1.Count*
+  name: Count
+  href: api/Telepathy.SafeQueue-1.html#Telepathy_SafeQueue_1_Count_
+  commentId: Overload:Telepathy.SafeQueue`1.Count
+  isSpec: "True"
+  fullName: Telepathy.SafeQueue<T>.Count
+  fullName.vb: Telepathy.SafeQueue(Of T).Count
+  nameWithType: SafeQueue<T>.Count
+  nameWithType.vb: SafeQueue(Of T).Count
+- uid: Telepathy.SafeQueue`1.Enqueue(`0)
+  name: Enqueue(T)
+  href: api/Telepathy.SafeQueue-1.html#Telepathy_SafeQueue_1_Enqueue__0_
+  commentId: M:Telepathy.SafeQueue`1.Enqueue(`0)
+  fullName: Telepathy.SafeQueue<T>.Enqueue(T)
+  fullName.vb: Telepathy.SafeQueue(Of T).Enqueue(T)
+  nameWithType: SafeQueue<T>.Enqueue(T)
+  nameWithType.vb: SafeQueue(Of T).Enqueue(T)
+- uid: Telepathy.SafeQueue`1.Enqueue*
+  name: Enqueue
+  href: api/Telepathy.SafeQueue-1.html#Telepathy_SafeQueue_1_Enqueue_
+  commentId: Overload:Telepathy.SafeQueue`1.Enqueue
+  isSpec: "True"
+  fullName: Telepathy.SafeQueue<T>.Enqueue
+  fullName.vb: Telepathy.SafeQueue(Of T).Enqueue
+  nameWithType: SafeQueue<T>.Enqueue
+  nameWithType.vb: SafeQueue(Of T).Enqueue
+- uid: Telepathy.SafeQueue`1.TryDequeue(`0@)
+  name: TryDequeue(out T)
+  href: api/Telepathy.SafeQueue-1.html#Telepathy_SafeQueue_1_TryDequeue__0__
+  commentId: M:Telepathy.SafeQueue`1.TryDequeue(`0@)
+  name.vb: TryDequeue(ByRef T)
+  fullName: Telepathy.SafeQueue<T>.TryDequeue(out T)
+  fullName.vb: Telepathy.SafeQueue(Of T).TryDequeue(ByRef T)
+  nameWithType: SafeQueue<T>.TryDequeue(out T)
+  nameWithType.vb: SafeQueue(Of T).TryDequeue(ByRef T)
+- uid: Telepathy.SafeQueue`1.TryDequeue*
+  name: TryDequeue
+  href: api/Telepathy.SafeQueue-1.html#Telepathy_SafeQueue_1_TryDequeue_
+  commentId: Overload:Telepathy.SafeQueue`1.TryDequeue
+  isSpec: "True"
+  fullName: Telepathy.SafeQueue<T>.TryDequeue
+  fullName.vb: Telepathy.SafeQueue(Of T).TryDequeue
+  nameWithType: SafeQueue<T>.TryDequeue
+  nameWithType.vb: SafeQueue(Of T).TryDequeue
+- uid: Telepathy.Server
+  name: Server
+  href: api/Telepathy.Server.html
+  commentId: T:Telepathy.Server
+  fullName: Telepathy.Server
+  nameWithType: Server
+- uid: Telepathy.Server.Active
+  name: Active
+  href: api/Telepathy.Server.html#Telepathy_Server_Active
+  commentId: P:Telepathy.Server.Active
+  fullName: Telepathy.Server.Active
+  nameWithType: Server.Active
+- uid: Telepathy.Server.Active*
+  name: Active
+  href: api/Telepathy.Server.html#Telepathy_Server_Active_
+  commentId: Overload:Telepathy.Server.Active
+  isSpec: "True"
+  fullName: Telepathy.Server.Active
+  nameWithType: Server.Active
+- uid: Telepathy.Server.Disconnect(System.Int32)
+  name: Disconnect(Int32)
+  href: api/Telepathy.Server.html#Telepathy_Server_Disconnect_System_Int32_
+  commentId: M:Telepathy.Server.Disconnect(System.Int32)
+  fullName: Telepathy.Server.Disconnect(System.Int32)
+  nameWithType: Server.Disconnect(Int32)
+- uid: Telepathy.Server.Disconnect*
+  name: Disconnect
+  href: api/Telepathy.Server.html#Telepathy_Server_Disconnect_
+  commentId: Overload:Telepathy.Server.Disconnect
+  isSpec: "True"
+  fullName: Telepathy.Server.Disconnect
+  nameWithType: Server.Disconnect
+- uid: Telepathy.Server.GetClient(System.Int32)
+  name: GetClient(Int32)
+  href: api/Telepathy.Server.html#Telepathy_Server_GetClient_System_Int32_
+  commentId: M:Telepathy.Server.GetClient(System.Int32)
+  fullName: Telepathy.Server.GetClient(System.Int32)
+  nameWithType: Server.GetClient(Int32)
+- uid: Telepathy.Server.GetClient*
+  name: GetClient
+  href: api/Telepathy.Server.html#Telepathy_Server_GetClient_
+  commentId: Overload:Telepathy.Server.GetClient
+  isSpec: "True"
+  fullName: Telepathy.Server.GetClient
+  nameWithType: Server.GetClient
+- uid: Telepathy.Server.GetConnectionInfo(System.Int32,System.String@)
+  name: GetConnectionInfo(Int32, out String)
+  href: api/Telepathy.Server.html#Telepathy_Server_GetConnectionInfo_System_Int32_System_String__
+  commentId: M:Telepathy.Server.GetConnectionInfo(System.Int32,System.String@)
+  name.vb: GetConnectionInfo(Int32, ByRef String)
+  fullName: Telepathy.Server.GetConnectionInfo(System.Int32, out System.String)
+  fullName.vb: Telepathy.Server.GetConnectionInfo(System.Int32, ByRef System.String)
+  nameWithType: Server.GetConnectionInfo(Int32, out String)
+  nameWithType.vb: Server.GetConnectionInfo(Int32, ByRef String)
+- uid: Telepathy.Server.GetConnectionInfo*
+  name: GetConnectionInfo
+  href: api/Telepathy.Server.html#Telepathy_Server_GetConnectionInfo_
+  commentId: Overload:Telepathy.Server.GetConnectionInfo
+  isSpec: "True"
+  fullName: Telepathy.Server.GetConnectionInfo
+  nameWithType: Server.GetConnectionInfo
+- uid: Telepathy.Server.NextConnectionId
+  name: NextConnectionId()
+  href: api/Telepathy.Server.html#Telepathy_Server_NextConnectionId
+  commentId: M:Telepathy.Server.NextConnectionId
+  fullName: Telepathy.Server.NextConnectionId()
+  nameWithType: Server.NextConnectionId()
+- uid: Telepathy.Server.NextConnectionId*
+  name: NextConnectionId
+  href: api/Telepathy.Server.html#Telepathy_Server_NextConnectionId_
+  commentId: Overload:Telepathy.Server.NextConnectionId
+  isSpec: "True"
+  fullName: Telepathy.Server.NextConnectionId
+  nameWithType: Server.NextConnectionId
+- uid: Telepathy.Server.NoDelay
+  name: NoDelay
+  href: api/Telepathy.Server.html#Telepathy_Server_NoDelay
+  commentId: F:Telepathy.Server.NoDelay
+  fullName: Telepathy.Server.NoDelay
+  nameWithType: Server.NoDelay
+- uid: Telepathy.Server.Send(System.Int32,System.Byte[])
+  name: Send(Int32, Byte[])
+  href: api/Telepathy.Server.html#Telepathy_Server_Send_System_Int32_System_Byte___
+  commentId: M:Telepathy.Server.Send(System.Int32,System.Byte[])
+  name.vb: Send(Int32, Byte())
+  fullName: Telepathy.Server.Send(System.Int32, System.Byte[])
+  fullName.vb: Telepathy.Server.Send(System.Int32, System.Byte())
+  nameWithType: Server.Send(Int32, Byte[])
+  nameWithType.vb: Server.Send(Int32, Byte())
+- uid: Telepathy.Server.Send*
+  name: Send
+  href: api/Telepathy.Server.html#Telepathy_Server_Send_
+  commentId: Overload:Telepathy.Server.Send
+  isSpec: "True"
+  fullName: Telepathy.Server.Send
+  nameWithType: Server.Send
+- uid: Telepathy.Server.Start(System.Int32,System.Int32)
+  name: Start(Int32, Int32)
+  href: api/Telepathy.Server.html#Telepathy_Server_Start_System_Int32_System_Int32_
+  commentId: M:Telepathy.Server.Start(System.Int32,System.Int32)
+  fullName: Telepathy.Server.Start(System.Int32, System.Int32)
+  nameWithType: Server.Start(Int32, Int32)
+- uid: Telepathy.Server.Start*
+  name: Start
+  href: api/Telepathy.Server.html#Telepathy_Server_Start_
+  commentId: Overload:Telepathy.Server.Start
+  isSpec: "True"
+  fullName: Telepathy.Server.Start
+  nameWithType: Server.Start
+- uid: Telepathy.Server.Stop
+  name: Stop()
+  href: api/Telepathy.Server.html#Telepathy_Server_Stop
+  commentId: M:Telepathy.Server.Stop
+  fullName: Telepathy.Server.Stop()
+  nameWithType: Server.Stop()
+- uid: Telepathy.Server.Stop*
+  name: Stop
+  href: api/Telepathy.Server.html#Telepathy_Server_Stop_
+  commentId: Overload:Telepathy.Server.Stop
+  isSpec: "True"
+  fullName: Telepathy.Server.Stop
+  nameWithType: Server.Stop
