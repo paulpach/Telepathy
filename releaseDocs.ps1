@@ -7,7 +7,6 @@ cd ..
 Set-Variable -Name TEMP_REPO_DIR "telepathy-gh-pages"
 
 echo "Removing temporary doc directory $TEMP_REPO_DIR"
-
 if (Test-Path -Path $TEMP_REPO_DIR) { 
     Remove-Item -Path $TEMP_REPO_DIR -Recurse -Force
 }
