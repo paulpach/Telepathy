@@ -14,7 +14,6 @@ if (Test-Path -Path $TEMP_REPO_DIR) {
 
 New-Item -ItemType directory -Path $TEMP_REPO_DIR
 
-
 echo "Cloning the repo with the gh-pages branch"
 git clone https://github.com/paulpach/Telepathy.git --branch gh-pages $TEMP_REPO_DIR
 
