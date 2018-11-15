@@ -4,7 +4,9 @@ docfx ./docs/docfx.json
 Get-Content -path "$HOME\.git-credentials"
 
 Set-Variable -Name SOURCE_DIR "$PWD"
-Set-Variable -Name TEMP_REPO_DIR "$PWD\..\telepathy-gh-pages"
+cd ..
+
+Set-Variable -Name TEMP_REPO_DIR "telepathy-gh-pages"
 
 echo "Removing temporary doc directory $TEMP_REPO_DIR"
 Remove-Item -Path $TEMP_REPO_DIR -Recurse -Force
