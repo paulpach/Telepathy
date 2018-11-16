@@ -28,6 +28,7 @@ namespace Telepathy
         public event Action<Exception> OnError;
 
         public TcpClient tcpClient;
+        internal Thread thread;
 
         protected virtual Stream stream
         {
@@ -185,7 +186,8 @@ namespace Telepathy
 
         public void Stop()
         {
-            Close();
+            thread.Interrupt();
+            thread.Join();
         }
     }
 }

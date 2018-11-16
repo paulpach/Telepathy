@@ -77,6 +77,15 @@ namespace Telepathy
                 // something went wrong. probably important.
                 Logger.LogError("Server Exception: " + exception);
             }
+            finally
+            {
+                // need to stop all connections
+                foreach (Connection connection in connections.GetValues())
+                {
+                    connection.Stop();
+                }
+                connections.Clear();
+            }
         }
 
         private void Accept()
@@ -99,7 +108,7 @@ namespace Telepathy
 
                 // spawn a thread for each client to listen to his
                 // messages
-                Thread thread = new Thread(() =>
+                connection.thread = new Thread(() =>
                 {
 
                     try
@@ -114,8 +123,8 @@ namespace Telepathy
                         connections.Remove(connectionId);
                     }
                 });
-                thread.IsBackground = true;
-                thread.Start();
+                connection.thread.IsBackground = true;
+                connection.thread.Start();
             }
             // connection limit reached. disconnect the client and show
             // a small log message so we know why it happened.
@@ -154,18 +163,10 @@ namespace Telepathy
 
             Logger.Log("Server: stopping...");
 
-            // stop listening to connections so that no one can connect while we
-            // close the client connections
-            listener.Stop();
+            listenerThread.Interrupt();
 
-            // close all client connections
-            foreach (Connection connection in connections.GetValues())
-            {
-                connection.Close();
-            }
+            listenerThread.Join();
 
-            // clear clients list
-            connections.Clear();
         }
 
         // send message to client using socket connection.
@@ -190,7 +191,7 @@ namespace Telepathy
 
             if (connections.TryGetValue(connectionId, out connection))
             {
-                connection.Close();
+                connection.Stop();
             }
         }
     }

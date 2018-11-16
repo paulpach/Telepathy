@@ -12,8 +12,6 @@ namespace Telepathy
         /// </summary>
         public Connection connection;
 
-        Thread thread;
-
         /// <summary>
         /// Creates a Tcp client with the default connection
         /// </summary>
@@ -113,19 +111,14 @@ namespace Telepathy
             //    too long, which is especially good in games
             // -> this way we don't async client.BeginConnect, which seems to
             //    fail sometimes if we connect too many clients too fast
-            thread = new Thread(() => { ThreadFunction(ip, port); });
-            thread.IsBackground = true;
-            thread.Start();
+            connection.thread = new Thread(() => { ThreadFunction(ip, port); });
+            connection.thread.IsBackground = true;
+            connection.thread.Start();
         }
 
         public virtual void Disconnect()
         {
-            connection.Close();
-
-            // wait until thread finished. this is the only way to guarantee
-            // that we can call Connect() again immediately after Disconnect
-            if (thread != null)
-                thread.Join();
+            connection.Stop();
         }
 
         public void Send(byte[] data)
