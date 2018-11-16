@@ -98,7 +98,7 @@ namespace Telepathy.Tests
             // finally when the client disconnect,  we should get a disconnected message
             client.Disconnect();
             Message disconnectMsg = NextMessage(server);
-            Assert.That(connectMsg, Is.AssignableFrom<DisconnectMessage>());
+            Assert.That(disconnectMsg, Is.AssignableFrom<DisconnectMessage>());
         }
 
         [Test]
@@ -166,7 +166,7 @@ namespace Telepathy.Tests
 
             // wait for client disconnected message
             Message clientDisconnectedMsg = NextMessage(client);
-            Assert.That(clientConnectedMsg, Is.AssignableFrom<DisconnectMessage>());
+            Assert.That(clientDisconnectedMsg, Is.AssignableFrom<DisconnectMessage>());
 
             // was everything cleaned perfectly?
             // if Connecting or Connected is still true then we wouldn't be able
