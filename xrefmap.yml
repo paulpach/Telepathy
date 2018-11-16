@@ -369,6 +369,25 @@ references:
   isSpec: "True"
   fullName: Telepathy.Logger.Log
   nameWithType: Logger.Log
+- uid: Telepathy.Logger.LogDebug(System.String)
+  name: LogDebug(String)
+  href: api/Telepathy.Logger.html#Telepathy_Logger_LogDebug_System_String_
+  commentId: M:Telepathy.Logger.LogDebug(System.String)
+  fullName: Telepathy.Logger.LogDebug(System.String)
+  nameWithType: Logger.LogDebug(String)
+- uid: Telepathy.Logger.LogDebug*
+  name: LogDebug
+  href: api/Telepathy.Logger.html#Telepathy_Logger_LogDebug_
+  commentId: Overload:Telepathy.Logger.LogDebug
+  isSpec: "True"
+  fullName: Telepathy.Logger.LogDebug
+  nameWithType: Logger.LogDebug
+- uid: Telepathy.Logger.LogDebugMethod
+  name: LogDebugMethod
+  href: api/Telepathy.Logger.html#Telepathy_Logger_LogDebugMethod
+  commentId: F:Telepathy.Logger.LogDebugMethod
+  fullName: Telepathy.Logger.LogDebugMethod
+  nameWithType: Logger.LogDebugMethod
 - uid: Telepathy.Logger.LogError(System.String)
   name: LogError(String)
   href: api/Telepathy.Logger.html#Telepathy_Logger_LogError_System_String_
