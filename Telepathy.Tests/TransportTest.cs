@@ -175,6 +175,7 @@ namespace Telepathy.Tests
             Assert.That(client.Connected, Is.False);
         }
 
+        /*
         [Test]
         public void GetConnectionInfoTest()
         {
@@ -184,7 +185,8 @@ namespace Telepathy.Tests
 
             // get server's connect message
             Message serverConnectMsg = NextMessage(server);
-            Assert.That(serverConnectMsg.eventType, Is.EqualTo(EventType.Connected));
+            Assert.That(serverConnectMsg, Is.AssignableFrom<ConnectMessage>());
+
 
             // get server's connection info for that client
             string address;
@@ -196,6 +198,7 @@ namespace Telepathy.Tests
 
             client.Disconnect();
         }
+*/
 
         [Test]
         public void LargeMessageTest()
@@ -210,8 +213,7 @@ namespace Telepathy.Tests
 
             // Send a large message,  bigger thank 64K
             client.Send(new byte[100000]);
-            Message dataMsg = NextMessage(server);
-            Assert.That(dataMsg.eventType, Is.EqualTo(EventType.Data));
+            var dataMsg = (DataMessage)NextMessage(server);
             Assert.That(dataMsg.data.Length, Is.EqualTo(100000));
 
             // finally if the server stops,  the clients should get a disconnect error
@@ -222,18 +224,19 @@ namespace Telepathy.Tests
 
         static Message NextMessage(Server server)
         {
-            Message message;
+            Message message = server.GetNextMessage();
             int count = 0;
 
-            while (!server.GetNextMessage(out message))
+            while (message == null)
             {
                 count++;
-                Thread.Sleep(100);
 
                 if (count >= 100)
                 {
                     Assert.Fail("The message did not get to the server");
                 }
+                Thread.Sleep(100);
+                message = server.GetNextMessage();
             }
 
             return message;
@@ -241,18 +244,20 @@ namespace Telepathy.Tests
 
         static Message NextMessage(Client client)
         {
-            Message message;
+            Message message = client.GetNextMessage();
+
             int count = 0;
 
-            while (!client.GetNextMessage(out message))
+            while (message == null)
             {
                 count++;
-                Thread.Sleep(100);
 
                 if (count >= 100)
                 {
                     Assert.Fail("The message did not get to the server");
                 }
+                Thread.Sleep(100);
+                message = client.GetNextMessage();
             }
 
             return message;

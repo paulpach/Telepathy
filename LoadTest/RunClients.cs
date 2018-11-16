@@ -48,13 +48,12 @@ namespace Telepathy.LoadTest
 
                         messagesSent += 2;
                         // get new messages from queue
-                        Message msg;
-                        while (client.GetNextMessage(out msg))
+                        for (var msg = client.GetNextMessage(); msg != null; msg = client.GetNextMessage())
                         {
-                            if (msg.eventType == EventType.Data)
+                            if (msg is DataMessage dataMessage)
                             {
                                 messagesReceived++;
-                                dataReceived += msg.data.Length;
+                                dataReceived += dataMessage.data.Length;
                             }
                         }
                     }

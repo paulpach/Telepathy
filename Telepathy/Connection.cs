@@ -141,6 +141,10 @@ namespace Telepathy
                         onDataTmp(content);
                 }
             }
+            catch (ThreadInterruptedException e)
+            {
+                // the thread got stopped, no error
+            }
             catch (Exception exception)
             {
                 // something went wrong. the thread was interrupted or the
@@ -161,7 +165,7 @@ namespace Telepathy
             }
         }
 
-        public void Close()
+        private void Close()
         {
             // clean up no matter what
             if (stream != null)
