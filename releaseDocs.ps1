@@ -27,6 +27,4 @@ echo "Push the new docs to the remote branch"
 git add . -A
 git commit -m "Update generated documentation"
 
-git config --list --show-origin
-
 git push origin gh-pages
