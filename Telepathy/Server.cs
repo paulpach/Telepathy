@@ -69,7 +69,7 @@ namespace Telepathy
             {
                 // calling StopServer will interrupt this thread with a
                 // 'SocketException: interrupted'. that's okay.
-                Logger.Log("Server Thread stopped. That's okay. " + exception);
+                Logger.LogDebug("Server Thread stopped. That's okay. " + exception);
             }
             catch (Exception exception)
             {

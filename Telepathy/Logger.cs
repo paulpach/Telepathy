@@ -8,6 +8,13 @@ namespace Telepathy
 {
     public static class Logger
     {
+        // debug log,  normally turned off
+        public static Action<string> LogDebugMethod = txt => {};
+        public static void LogDebug(string msg)
+        {
+            LogDebugMethod(msg);
+        }
+
         // log regular
         public static Action<string> LogMethod = Console.WriteLine;
         public static void Log(string msg)
