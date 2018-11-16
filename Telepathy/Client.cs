@@ -72,6 +72,11 @@ namespace Telepathy
 
                 ProcessMessages(0, connection);
             }
+            catch (ObjectDisposedException exception)
+            {
+                // if you call Disconnect immediatelly after Connect,  this can happen
+                Logger.LogDebug("Client was closed before it connected " + exception);
+            }
             catch (Exception exception)
             {
                 // this happens if (for example) the ip address is correct
@@ -82,6 +87,9 @@ namespace Telepathy
                 // knows that the Connect failed. otherwise they will never know
                 messageQueue.Enqueue(new ErrorMessage(0, exception));
 
+            }
+            finally
+            {
                 connection.status = Connection.Status.Disconnected;
             }
         }
