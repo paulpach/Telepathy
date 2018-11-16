@@ -144,6 +144,7 @@ namespace Telepathy
             }
             catch (ThreadInterruptedException e)
             {
+                Logger.Log("Thread interrupted " + e.ToString());
                 // the thread got stopped, no error
             }
             catch (Exception exception)
@@ -168,13 +169,6 @@ namespace Telepathy
 
         private void Close()
         {
-            // clean up no matter what
-            if (stream != null)
-            {
-                // eat any error
-                try { stream.Close(); } catch (Exception) { }
-            }
-
             if (tcpClient != null)
             {
                 // eat any error
@@ -186,7 +180,7 @@ namespace Telepathy
 
         public void Stop()
         {
-            thread.Interrupt();
+            tcpClient.Close();
             thread.Join();
         }
     }

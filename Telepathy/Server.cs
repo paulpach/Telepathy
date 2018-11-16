@@ -163,8 +163,7 @@ namespace Telepathy
 
             Logger.Log("Server: stopping...");
 
-            listenerThread.Interrupt();
-
+            listener.Stop();
             listenerThread.Join();
 
         }
