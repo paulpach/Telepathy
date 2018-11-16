@@ -9,7 +9,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Telepathy.Client.html",
-          "hash": "D+bXuJ7PitRYo4Nd4wmWgA=="
+          "hash": "BoPQiupuII06jzeqRjuFow=="
         }
       },
       "is_incremental": false,
@@ -17,11 +17,11 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Telepathy.Common.yml",
+      "source_relative_path": "api/Telepathy.ConnectMessage.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Telepathy.Common.html",
-          "hash": "hmmQ+Yn2t74vjcXFZwZmhA=="
+          "relative_path": "api/Telepathy.ConnectMessage.html",
+          "hash": "htiZrmG/2fTPDSGdL9MlGA=="
         }
       },
       "is_incremental": false,
@@ -29,11 +29,59 @@
     },
     {
       "type": "ManagedReference",
-      "source_relative_path": "api/Telepathy.EventType.yml",
+      "source_relative_path": "api/Telepathy.Connection.Status.yml",
       "output": {
         ".html": {
-          "relative_path": "api/Telepathy.EventType.html",
-          "hash": "kB729GQ03GUvpVMSHsygWQ=="
+          "relative_path": "api/Telepathy.Connection.Status.html",
+          "hash": "JSaSH5eOYHy7cHWepJ8Q5Q=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Telepathy.Connection.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Telepathy.Connection.html",
+          "hash": "eX+Y/lM+1yjQ35cjejp68A=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Telepathy.DataMessage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Telepathy.DataMessage.html",
+          "hash": "d3BieNQ+nD63umTm2Z2ExA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Telepathy.DisconnectMessage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Telepathy.DisconnectMessage.html",
+          "hash": "2572pjV9rG7KXvhtOPNRqQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Telepathy.ErrorMessage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Telepathy.ErrorMessage.html",
+          "hash": "75xbCsjMcroBDDqcfjUM5w=="
         }
       },
       "is_incremental": false,
@@ -45,7 +93,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Telepathy.Logger.html",
-          "hash": "XnQ9tknzN6JicYjUQYIDIg=="
+          "hash": "CxNgPET9qrvtg0ZPo01UMQ=="
         }
       },
       "is_incremental": false,
@@ -57,7 +105,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Telepathy.Message.html",
-          "hash": "gFSGpj6GrTMn8E++N43Y7Q=="
+          "hash": "e7p59krduMAWjcBvnSSqlQ=="
         }
       },
       "is_incremental": false,
@@ -69,7 +117,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Telepathy.SafeDictionary-2.html",
-          "hash": "gI5yf4rZX786D5cAgU7KDQ=="
+          "hash": "j1M2H7HZunxfFZBUFpCzZg=="
         }
       },
       "is_incremental": false,
@@ -81,7 +129,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Telepathy.SafeQueue-1.html",
-          "hash": "cfUIhhuVYYjC6cZVcYc5lw=="
+          "hash": "WQ06o24irIk3xGtAzpN8Iw=="
         }
       },
       "is_incremental": false,
@@ -93,7 +141,19 @@
       "output": {
         ".html": {
           "relative_path": "api/Telepathy.Server.html",
-          "hash": "TUYQys7z9FrLYp6R4hkaEA=="
+          "hash": "gBjtE/eWbcqyS1UFPT3w0g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/Telepathy.Transport.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/Telepathy.Transport.html",
+          "hash": "yRWU1rzfF/P4ISKx7I8RHw=="
         }
       },
       "is_incremental": false,
@@ -105,7 +165,7 @@
       "output": {
         ".html": {
           "relative_path": "api/Telepathy.html",
-          "hash": "J9KYKfzxemMqct9os8xnmQ=="
+          "hash": "kZujWG65iD2trjpmtrcwLg=="
         }
       },
       "is_incremental": false,
@@ -117,7 +177,7 @@
       "output": {
         ".html": {
           "relative_path": "api/index.html",
-          "hash": "fxFnYQEGkWFhhuhoRxbKvQ=="
+          "hash": "czi71tLCZTCpRfDln9+8WQ=="
         }
       },
       "is_incremental": false,
@@ -129,7 +189,7 @@
       "output": {
         ".html": {
           "relative_path": "api/toc.html",
-          "hash": "n54F3VLSgWJZN9YvyV0cnA=="
+          "hash": "EK+Hjs+wXsvMlkdBAjVx0A=="
         }
       },
       "is_incremental": false,
@@ -141,7 +201,7 @@
       "output": {
         ".html": {
           "relative_path": "articles/intro.html",
-          "hash": "AZvpsB7R0W0lGZ/U+PJWlg=="
+          "hash": "dAIn8E6uSkvAmVax20z7Nw=="
         }
       },
       "is_incremental": false,
@@ -165,7 +225,7 @@
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "X8gl1gMXEebvFz8XSCPG4g=="
+          "hash": "nY72q1BGCf+QSd0zcxGSKg=="
         }
       },
       "is_incremental": false,
@@ -197,11 +257,11 @@
           "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
           "incrementalPhase": "build"
         },
-        "ManagedReferenceDocumentProcessor": {
+        "ConceptualDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build"
         },
-        "ConceptualDocumentProcessor": {
+        "ManagedReferenceDocumentProcessor": {
           "can_incremental": false,
           "incrementalPhase": "build"
         }

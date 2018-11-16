@@ -78,28 +78,22 @@
   <div class="inheritance">
     <h5>Inheritance</h5>
     <div class="level0"><span class="xref">System.Object</span></div>
-    <div class="level1"><a class="xref" href="Telepathy.Common.html">Common</a></div>
+    <div class="level1"><a class="xref" href="Telepathy.Transport.html">Transport</a></div>
     <div class="level2"><span class="xref">Client</span></div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
     <div>
-      <a class="xref" href="Telepathy.Common.html#Telepathy_Common_messageQueue">Common.messageQueue</a>
+      <a class="xref" href="Telepathy.Transport.html#Telepathy_Transport_messageQueue">Transport.messageQueue</a>
     </div>
     <div>
-      <a class="xref" href="Telepathy.Common.html#Telepathy_Common_messageQueueSizeWarning">Common.messageQueueSizeWarning</a>
+      <a class="xref" href="Telepathy.Transport.html#Telepathy_Transport_messageQueueSizeWarning">Transport.messageQueueSizeWarning</a>
     </div>
     <div>
-      <a class="xref" href="Telepathy.Common.html#Telepathy_Common_GetNextMessage_Telepathy_Message__">Common.GetNextMessage(Message)</a>
+      <a class="xref" href="Telepathy.Transport.html#Telepathy_Transport_GetNextMessage">Transport.GetNextMessage()</a>
     </div>
     <div>
-      <a class="xref" href="Telepathy.Common.html#Telepathy_Common_SendMessage_System_Net_Sockets_NetworkStream_System_Byte___">Common.SendMessage(NetworkStream, Byte[])</a>
-    </div>
-    <div>
-      <a class="xref" href="Telepathy.Common.html#Telepathy_Common_ReadMessageBlocking_System_Net_Sockets_NetworkStream_System_Byte____">Common.ReadMessageBlocking(NetworkStream, Byte[])</a>
-    </div>
-    <div>
-      <a class="xref" href="Telepathy.Common.html#Telepathy_Common_ReceiveLoop_System_Int32_System_Net_Sockets_TcpClient_Telepathy_SafeQueue_Telepathy_Message__">Common.ReceiveLoop(Int32, TcpClient, SafeQueue&lt;Message&gt;)</a>
+      <a class="xref" href="Telepathy.Transport.html#Telepathy_Transport_ProcessMessages_System_Int32_Telepathy_Connection_">Transport.ProcessMessages(Int32, Connection)</a>
     </div>
     <div>
       <span class="xref">System.Object.ToString()</span>
@@ -127,23 +121,76 @@
   <h6><strong>Assembly</strong>: Telepathy.dll</h6>
   <h5 id="Telepathy_Client_syntax">Syntax</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public class Client : Common</code></pre>
+    <pre><code class="lang-csharp hljs">public class Client : Transport</code></pre>
   </div>
+  <h3 id="constructors">Constructors
+  </h3>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/paulpach/Telepathy/new/stream/apiSpec/new?filename=Telepathy_Client__ctor.md&amp;value=---%0Auid%3A%20Telepathy.Client.%23ctor%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/paulpach/Telepathy/blob/stream/Telepathy/Client.cs/#L18">View Source</a>
+  </span>
+  <a id="Telepathy_Client__ctor_" data-uid="Telepathy.Client.#ctor*"></a>
+  <h4 id="Telepathy_Client__ctor" data-uid="Telepathy.Client.#ctor">Client()</h4>
+  <div class="markdown level1 summary"><p>Creates a Tcp client with the default connection</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Client()</code></pre>
+  </div>
+  <span class="small pull-right mobile-hide">
+    <span class="divider">|</span>
+    <a href="https://github.com/paulpach/Telepathy/new/stream/apiSpec/new?filename=Telepathy_Client__ctor_Telepathy_Connection_.md&amp;value=---%0Auid%3A%20Telepathy.Client.%23ctor(Telepathy.Connection)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+  </span>
+  <span class="small pull-right mobile-hide">
+    <a href="https://github.com/paulpach/Telepathy/blob/stream/Telepathy/Client.cs/#L27">View Source</a>
+  </span>
+  <a id="Telepathy_Client__ctor_" data-uid="Telepathy.Client.#ctor*"></a>
+  <h4 id="Telepathy_Client__ctor_Telepathy_Connection_" data-uid="Telepathy.Client.#ctor(Telepathy.Connection)">Client(Connection)</h4>
+  <div class="markdown level1 summary"><p>Creates a Tcp client with a user provided connection</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Client(Connection connection)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="Telepathy.Connection.html">Connection</a></td>
+        <td><span class="parametername">connection</span></td>
+        <td><p>Connection object to be used</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
   <h3 id="fields">Fields
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/paulpach/Telepathy/new/docfx/apiSpec/new?filename=Telepathy_Client_client.md&amp;value=---%0Auid%3A%20Telepathy.Client.client%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/paulpach/Telepathy/new/stream/apiSpec/new?filename=Telepathy_Client_connection.md&amp;value=---%0Auid%3A%20Telepathy.Client.connection%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/paulpach/Telepathy/blob/docfx/Telepathy/Client.cs/#L9">View Source</a>
+    <a href="https://github.com/paulpach/Telepathy/blob/stream/Telepathy/Client.cs/#L13">View Source</a>
   </span>
-  <h4 id="Telepathy_Client_client" data-uid="Telepathy.Client.client">client</h4>
-  <div class="markdown level1 summary"></div>
+  <h4 id="Telepathy_Client_connection" data-uid="Telepathy.Client.connection">connection</h4>
+  <div class="markdown level1 summary"><p>The connection to the server</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public TcpClient client</code></pre>
+    <pre><code class="lang-csharp hljs">public Connection connection</code></pre>
   </div>
   <h5 class="fieldValue">Field Value</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -155,17 +202,17 @@
     </thead>
     <tbody>
       <tr>
-        <td><span class="xref">System.Net.Sockets.TcpClient</span></td>
+        <td><a class="xref" href="Telepathy.Connection.html">Connection</a></td>
         <td></td>
       </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/paulpach/Telepathy/new/docfx/apiSpec/new?filename=Telepathy_Client_NoDelay.md&amp;value=---%0Auid%3A%20Telepathy.Client.NoDelay%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/paulpach/Telepathy/new/stream/apiSpec/new?filename=Telepathy_Client_NoDelay.md&amp;value=---%0Auid%3A%20Telepathy.Client.NoDelay%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/paulpach/Telepathy/blob/docfx/Telepathy/Client.cs/#L25">View Source</a>
+    <a href="https://github.com/paulpach/Telepathy/blob/stream/Telepathy/Client.cs/#L48">View Source</a>
   </span>
   <h4 id="Telepathy_Client_NoDelay" data-uid="Telepathy.Client.NoDelay">NoDelay</h4>
   <div class="markdown level1 summary"></div>
@@ -193,14 +240,15 @@
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/paulpach/Telepathy/new/docfx/apiSpec/new?filename=Telepathy_Client_Connected.md&amp;value=---%0Auid%3A%20Telepathy.Client.Connected%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/paulpach/Telepathy/new/stream/apiSpec/new?filename=Telepathy_Client_Connected.md&amp;value=---%0Auid%3A%20Telepathy.Client.Connected%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/paulpach/Telepathy/blob/docfx/Telepathy/Client.cs/#L12">View Source</a>
+    <a href="https://github.com/paulpach/Telepathy/blob/stream/Telepathy/Client.cs/#L36">View Source</a>
   </span>
   <a id="Telepathy_Client_Connected_" data-uid="Telepathy.Client.Connected*"></a>
   <h4 id="Telepathy_Client_Connected" data-uid="Telepathy.Client.Connected">Connected</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Determines if we are connected to the server</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -217,20 +265,22 @@
     <tbody>
       <tr>
         <td><span class="xref">System.Boolean</span></td>
-        <td></td>
+        <td><p><code>true</code> if connected; otherwise, <code>false</code>.</p>
+</td>
       </tr>
     </tbody>
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/paulpach/Telepathy/new/docfx/apiSpec/new?filename=Telepathy_Client_Connecting.md&amp;value=---%0Auid%3A%20Telepathy.Client.Connecting%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/paulpach/Telepathy/new/stream/apiSpec/new?filename=Telepathy_Client_Connecting.md&amp;value=---%0Auid%3A%20Telepathy.Client.Connecting%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/paulpach/Telepathy/blob/docfx/Telepathy/Client.cs/#L40">View Source</a>
+    <a href="https://github.com/paulpach/Telepathy/blob/stream/Telepathy/Client.cs/#L54">View Source</a>
   </span>
   <a id="Telepathy_Client_Connecting_" data-uid="Telepathy.Client.Connecting*"></a>
   <h4 id="Telepathy_Client_Connecting" data-uid="Telepathy.Client.Connecting">Connecting</h4>
-  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 summary"><p>Gets a value indicating whether this <a class="xref" href="Telepathy.Client.html">Client</a> is connecting.</p>
+</div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
@@ -247,7 +297,8 @@
     <tbody>
       <tr>
         <td><span class="xref">System.Boolean</span></td>
-        <td></td>
+        <td><p><code>true</code> if connecting; otherwise, <code>false</code>.</p>
+</td>
       </tr>
     </tbody>
   </table>
@@ -255,10 +306,10 @@
   </h3>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/paulpach/Telepathy/new/docfx/apiSpec/new?filename=Telepathy_Client_Connect_System_String_System_Int32_.md&amp;value=---%0Auid%3A%20Telepathy.Client.Connect(System.String%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/paulpach/Telepathy/new/stream/apiSpec/new?filename=Telepathy_Client_Connect_System_String_System_Int32_.md&amp;value=---%0Auid%3A%20Telepathy.Client.Connect(System.String%2CSystem.Int32)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/paulpach/Telepathy/blob/docfx/Telepathy/Client.cs/#L82">View Source</a>
+    <a href="https://github.com/paulpach/Telepathy/blob/stream/Telepathy/Client.cs/#L89">View Source</a>
   </span>
   <a id="Telepathy_Client_Connect_" data-uid="Telepathy.Client.Connect*"></a>
   <h4 id="Telepathy_Client_Connect_System_String_System_Int32_" data-uid="Telepathy.Client.Connect(System.String,System.Int32)">Connect(String, Int32)</h4>
@@ -292,10 +343,10 @@
   </table>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/paulpach/Telepathy/new/docfx/apiSpec/new?filename=Telepathy_Client_Disconnect.md&amp;value=---%0Auid%3A%20Telepathy.Client.Disconnect%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/paulpach/Telepathy/new/stream/apiSpec/new?filename=Telepathy_Client_Disconnect.md&amp;value=---%0Auid%3A%20Telepathy.Client.Disconnect%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/paulpach/Telepathy/blob/docfx/Telepathy/Client.cs/#L115">View Source</a>
+    <a href="https://github.com/paulpach/Telepathy/blob/stream/Telepathy/Client.cs/#L119">View Source</a>
   </span>
   <a id="Telepathy_Client_Disconnect_" data-uid="Telepathy.Client.Disconnect*"></a>
   <h4 id="Telepathy_Client_Disconnect" data-uid="Telepathy.Client.Disconnect">Disconnect()</h4>
@@ -303,14 +354,14 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public void Disconnect()</code></pre>
+    <pre><code class="lang-csharp hljs">public virtual void Disconnect()</code></pre>
   </div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
-    <a href="https://github.com/paulpach/Telepathy/new/docfx/apiSpec/new?filename=Telepathy_Client_Send_System_Byte___.md&amp;value=---%0Auid%3A%20Telepathy.Client.Send(System.Byte%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
+    <a href="https://github.com/paulpach/Telepathy/new/stream/apiSpec/new?filename=Telepathy_Client_Send_System_Byte___.md&amp;value=---%0Auid%3A%20Telepathy.Client.Send(System.Byte%5B%5D)%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/paulpach/Telepathy/blob/docfx/Telepathy/Client.cs/#L132">View Source</a>
+    <a href="https://github.com/paulpach/Telepathy/blob/stream/Telepathy/Client.cs/#L124">View Source</a>
   </span>
   <a id="Telepathy_Client_Send_" data-uid="Telepathy.Client.Send*"></a>
   <h4 id="Telepathy_Client_Send_System_Byte___" data-uid="Telepathy.Client.Send(System.Byte[])">Send(Byte[])</h4>
@@ -318,7 +369,7 @@
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">public bool Send(byte[] data)</code></pre>
+    <pre><code class="lang-csharp hljs">public void Send(byte[] data)</code></pre>
   </div>
   <h5 class="parameters">Parameters</h5>
   <table class="table table-bordered table-striped table-condensed">
@@ -337,21 +388,6 @@
       </tr>
     </tbody>
   </table>
-  <h5 class="returns">Returns</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Boolean</span></td>
-        <td></td>
-      </tr>
-    </tbody>
-  </table>
 </article>
           </div>
           
@@ -360,10 +396,10 @@
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/paulpach/Telepathy/new/docfx/apiSpec/new?filename=Telepathy_Client.md&amp;value=---%0Auid%3A%20Telepathy.Client%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/paulpach/Telepathy/new/stream/apiSpec/new?filename=Telepathy_Client.md&amp;value=---%0Auid%3A%20Telepathy.Client%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/paulpach/Telepathy/blob/docfx/Telepathy/Client.cs/#L7" class="contribution-link">View Source</a>
+                    <a href="https://github.com/paulpach/Telepathy/blob/stream/Telepathy/Client.cs/#L8" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

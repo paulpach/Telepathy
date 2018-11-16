@@ -13,12 +13,25 @@ references:
   commentId: T:Telepathy.Client
   fullName: Telepathy.Client
   nameWithType: Client
-- uid: Telepathy.Client.client
-  name: client
-  href: api/Telepathy.Client.html#Telepathy_Client_client
-  commentId: F:Telepathy.Client.client
-  fullName: Telepathy.Client.client
-  nameWithType: Client.client
+- uid: Telepathy.Client.#ctor
+  name: Client()
+  href: api/Telepathy.Client.html#Telepathy_Client__ctor
+  commentId: M:Telepathy.Client.#ctor
+  fullName: Telepathy.Client.Client()
+  nameWithType: Client.Client()
+- uid: Telepathy.Client.#ctor(Telepathy.Connection)
+  name: Client(Connection)
+  href: api/Telepathy.Client.html#Telepathy_Client__ctor_Telepathy_Connection_
+  commentId: M:Telepathy.Client.#ctor(Telepathy.Connection)
+  fullName: Telepathy.Client.Client(Telepathy.Connection)
+  nameWithType: Client.Client(Connection)
+- uid: Telepathy.Client.#ctor*
+  name: Client
+  href: api/Telepathy.Client.html#Telepathy_Client__ctor_
+  commentId: Overload:Telepathy.Client.#ctor
+  isSpec: "True"
+  fullName: Telepathy.Client.Client
+  nameWithType: Client.Client
 - uid: Telepathy.Client.Connect(System.String,System.Int32)
   name: Connect(String, Int32)
   href: api/Telepathy.Client.html#Telepathy_Client_Connect_System_String_System_Int32_
@@ -58,6 +71,12 @@ references:
   isSpec: "True"
   fullName: Telepathy.Client.Connecting
   nameWithType: Client.Connecting
+- uid: Telepathy.Client.connection
+  name: connection
+  href: api/Telepathy.Client.html#Telepathy_Client_connection
+  commentId: F:Telepathy.Client.connection
+  fullName: Telepathy.Client.connection
+  nameWithType: Client.connection
 - uid: Telepathy.Client.Disconnect
   name: Disconnect()
   href: api/Telepathy.Client.html#Telepathy_Client_Disconnect
@@ -93,112 +112,244 @@ references:
   isSpec: "True"
   fullName: Telepathy.Client.Send
   nameWithType: Client.Send
-- uid: Telepathy.Common
-  name: Common
-  href: api/Telepathy.Common.html
-  commentId: T:Telepathy.Common
-  fullName: Telepathy.Common
-  nameWithType: Common
-- uid: Telepathy.Common.GetNextMessage(Telepathy.Message@)
-  name: GetNextMessage(out Message)
-  href: api/Telepathy.Common.html#Telepathy_Common_GetNextMessage_Telepathy_Message__
-  commentId: M:Telepathy.Common.GetNextMessage(Telepathy.Message@)
-  name.vb: GetNextMessage(ByRef Message)
-  fullName: Telepathy.Common.GetNextMessage(out Telepathy.Message)
-  fullName.vb: Telepathy.Common.GetNextMessage(ByRef Telepathy.Message)
-  nameWithType: Common.GetNextMessage(out Message)
-  nameWithType.vb: Common.GetNextMessage(ByRef Message)
-- uid: Telepathy.Common.GetNextMessage*
-  name: GetNextMessage
-  href: api/Telepathy.Common.html#Telepathy_Common_GetNextMessage_
-  commentId: Overload:Telepathy.Common.GetNextMessage
+- uid: Telepathy.Connection
+  name: Connection
+  href: api/Telepathy.Connection.html
+  commentId: T:Telepathy.Connection
+  fullName: Telepathy.Connection
+  nameWithType: Connection
+- uid: Telepathy.Connection.#ctor
+  name: Connection()
+  href: api/Telepathy.Connection.html#Telepathy_Connection__ctor
+  commentId: M:Telepathy.Connection.#ctor
+  fullName: Telepathy.Connection.Connection()
+  nameWithType: Connection.Connection()
+- uid: Telepathy.Connection.#ctor*
+  name: Connection
+  href: api/Telepathy.Connection.html#Telepathy_Connection__ctor_
+  commentId: Overload:Telepathy.Connection.#ctor
   isSpec: "True"
-  fullName: Telepathy.Common.GetNextMessage
-  nameWithType: Common.GetNextMessage
-- uid: Telepathy.Common.messageQueue
-  name: messageQueue
-  href: api/Telepathy.Common.html#Telepathy_Common_messageQueue
-  commentId: F:Telepathy.Common.messageQueue
-  fullName: Telepathy.Common.messageQueue
-  nameWithType: Common.messageQueue
-- uid: Telepathy.Common.messageQueueSizeWarning
-  name: messageQueueSizeWarning
-  href: api/Telepathy.Common.html#Telepathy_Common_messageQueueSizeWarning
-  commentId: F:Telepathy.Common.messageQueueSizeWarning
-  fullName: Telepathy.Common.messageQueueSizeWarning
-  nameWithType: Common.messageQueueSizeWarning
-- uid: Telepathy.Common.ReadMessageBlocking(System.Net.Sockets.NetworkStream,System.Byte[]@)
-  name: ReadMessageBlocking(NetworkStream, out Byte[])
-  href: api/Telepathy.Common.html#Telepathy_Common_ReadMessageBlocking_System_Net_Sockets_NetworkStream_System_Byte____
-  commentId: M:Telepathy.Common.ReadMessageBlocking(System.Net.Sockets.NetworkStream,System.Byte[]@)
-  name.vb: ReadMessageBlocking(NetworkStream, ByRef Byte())
-  fullName: Telepathy.Common.ReadMessageBlocking(System.Net.Sockets.NetworkStream, out System.Byte[])
-  fullName.vb: Telepathy.Common.ReadMessageBlocking(System.Net.Sockets.NetworkStream, ByRef System.Byte())
-  nameWithType: Common.ReadMessageBlocking(NetworkStream, out Byte[])
-  nameWithType.vb: Common.ReadMessageBlocking(NetworkStream, ByRef Byte())
-- uid: Telepathy.Common.ReadMessageBlocking*
-  name: ReadMessageBlocking
-  href: api/Telepathy.Common.html#Telepathy_Common_ReadMessageBlocking_
-  commentId: Overload:Telepathy.Common.ReadMessageBlocking
+  fullName: Telepathy.Connection.Connection
+  nameWithType: Connection.Connection
+- uid: Telepathy.Connection.OnConnect
+  name: OnConnect
+  href: api/Telepathy.Connection.html#Telepathy_Connection_OnConnect
+  commentId: E:Telepathy.Connection.OnConnect
+  fullName: Telepathy.Connection.OnConnect
+  nameWithType: Connection.OnConnect
+- uid: Telepathy.Connection.OnData
+  name: OnData
+  href: api/Telepathy.Connection.html#Telepathy_Connection_OnData
+  commentId: E:Telepathy.Connection.OnData
+  fullName: Telepathy.Connection.OnData
+  nameWithType: Connection.OnData
+- uid: Telepathy.Connection.OnDisconnect
+  name: OnDisconnect
+  href: api/Telepathy.Connection.html#Telepathy_Connection_OnDisconnect
+  commentId: E:Telepathy.Connection.OnDisconnect
+  fullName: Telepathy.Connection.OnDisconnect
+  nameWithType: Connection.OnDisconnect
+- uid: Telepathy.Connection.OnError
+  name: OnError
+  href: api/Telepathy.Connection.html#Telepathy_Connection_OnError
+  commentId: E:Telepathy.Connection.OnError
+  fullName: Telepathy.Connection.OnError
+  nameWithType: Connection.OnError
+- uid: Telepathy.Connection.ProcessMessages
+  name: ProcessMessages()
+  href: api/Telepathy.Connection.html#Telepathy_Connection_ProcessMessages
+  commentId: M:Telepathy.Connection.ProcessMessages
+  fullName: Telepathy.Connection.ProcessMessages()
+  nameWithType: Connection.ProcessMessages()
+- uid: Telepathy.Connection.ProcessMessages*
+  name: ProcessMessages
+  href: api/Telepathy.Connection.html#Telepathy_Connection_ProcessMessages_
+  commentId: Overload:Telepathy.Connection.ProcessMessages
   isSpec: "True"
-  fullName: Telepathy.Common.ReadMessageBlocking
-  nameWithType: Common.ReadMessageBlocking
-- uid: Telepathy.Common.ReceiveLoop(System.Int32,System.Net.Sockets.TcpClient,Telepathy.SafeQueue{Telepathy.Message})
-  name: ReceiveLoop(Int32, TcpClient, SafeQueue<Message>)
-  href: api/Telepathy.Common.html#Telepathy_Common_ReceiveLoop_System_Int32_System_Net_Sockets_TcpClient_Telepathy_SafeQueue_Telepathy_Message__
-  commentId: M:Telepathy.Common.ReceiveLoop(System.Int32,System.Net.Sockets.TcpClient,Telepathy.SafeQueue{Telepathy.Message})
-  name.vb: ReceiveLoop(Int32, TcpClient, SafeQueue(Of Message))
-  fullName: Telepathy.Common.ReceiveLoop(System.Int32, System.Net.Sockets.TcpClient, Telepathy.SafeQueue<Telepathy.Message>)
-  fullName.vb: Telepathy.Common.ReceiveLoop(System.Int32, System.Net.Sockets.TcpClient, Telepathy.SafeQueue(Of Telepathy.Message))
-  nameWithType: Common.ReceiveLoop(Int32, TcpClient, SafeQueue<Message>)
-  nameWithType.vb: Common.ReceiveLoop(Int32, TcpClient, SafeQueue(Of Message))
-- uid: Telepathy.Common.ReceiveLoop*
-  name: ReceiveLoop
-  href: api/Telepathy.Common.html#Telepathy_Common_ReceiveLoop_
-  commentId: Overload:Telepathy.Common.ReceiveLoop
+  fullName: Telepathy.Connection.ProcessMessages
+  nameWithType: Connection.ProcessMessages
+- uid: Telepathy.Connection.ReadMessage
+  name: ReadMessage()
+  href: api/Telepathy.Connection.html#Telepathy_Connection_ReadMessage
+  commentId: M:Telepathy.Connection.ReadMessage
+  fullName: Telepathy.Connection.ReadMessage()
+  nameWithType: Connection.ReadMessage()
+- uid: Telepathy.Connection.ReadMessage*
+  name: ReadMessage
+  href: api/Telepathy.Connection.html#Telepathy_Connection_ReadMessage_
+  commentId: Overload:Telepathy.Connection.ReadMessage
   isSpec: "True"
-  fullName: Telepathy.Common.ReceiveLoop
-  nameWithType: Common.ReceiveLoop
-- uid: Telepathy.Common.SendMessage(System.Net.Sockets.NetworkStream,System.Byte[])
-  name: SendMessage(NetworkStream, Byte[])
-  href: api/Telepathy.Common.html#Telepathy_Common_SendMessage_System_Net_Sockets_NetworkStream_System_Byte___
-  commentId: M:Telepathy.Common.SendMessage(System.Net.Sockets.NetworkStream,System.Byte[])
-  name.vb: SendMessage(NetworkStream, Byte())
-  fullName: Telepathy.Common.SendMessage(System.Net.Sockets.NetworkStream, System.Byte[])
-  fullName.vb: Telepathy.Common.SendMessage(System.Net.Sockets.NetworkStream, System.Byte())
-  nameWithType: Common.SendMessage(NetworkStream, Byte[])
-  nameWithType.vb: Common.SendMessage(NetworkStream, Byte())
-- uid: Telepathy.Common.SendMessage*
+  fullName: Telepathy.Connection.ReadMessage
+  nameWithType: Connection.ReadMessage
+- uid: Telepathy.Connection.SendMessage(System.Byte[])
+  name: SendMessage(Byte[])
+  href: api/Telepathy.Connection.html#Telepathy_Connection_SendMessage_System_Byte___
+  commentId: M:Telepathy.Connection.SendMessage(System.Byte[])
+  name.vb: SendMessage(Byte())
+  fullName: Telepathy.Connection.SendMessage(System.Byte[])
+  fullName.vb: Telepathy.Connection.SendMessage(System.Byte())
+  nameWithType: Connection.SendMessage(Byte[])
+  nameWithType.vb: Connection.SendMessage(Byte())
+- uid: Telepathy.Connection.SendMessage*
   name: SendMessage
-  href: api/Telepathy.Common.html#Telepathy_Common_SendMessage_
-  commentId: Overload:Telepathy.Common.SendMessage
+  href: api/Telepathy.Connection.html#Telepathy_Connection_SendMessage_
+  commentId: Overload:Telepathy.Connection.SendMessage
   isSpec: "True"
-  fullName: Telepathy.Common.SendMessage
-  nameWithType: Common.SendMessage
-- uid: Telepathy.EventType
-  name: EventType
-  href: api/Telepathy.EventType.html
-  commentId: T:Telepathy.EventType
-  fullName: Telepathy.EventType
-  nameWithType: EventType
-- uid: Telepathy.EventType.Connected
+  fullName: Telepathy.Connection.SendMessage
+  nameWithType: Connection.SendMessage
+- uid: Telepathy.Connection.status
+  name: status
+  href: api/Telepathy.Connection.html#Telepathy_Connection_status
+  commentId: F:Telepathy.Connection.status
+  fullName: Telepathy.Connection.status
+  nameWithType: Connection.status
+- uid: Telepathy.Connection.Status
+  name: Connection.Status
+  href: api/Telepathy.Connection.Status.html
+  commentId: T:Telepathy.Connection.Status
+  fullName: Telepathy.Connection.Status
+  nameWithType: Connection.Status
+- uid: Telepathy.Connection.Status.Connected
   name: Connected
-  href: api/Telepathy.EventType.html#Telepathy_EventType_Connected
-  commentId: F:Telepathy.EventType.Connected
-  fullName: Telepathy.EventType.Connected
-  nameWithType: EventType.Connected
-- uid: Telepathy.EventType.Data
-  name: Data
-  href: api/Telepathy.EventType.html#Telepathy_EventType_Data
-  commentId: F:Telepathy.EventType.Data
-  fullName: Telepathy.EventType.Data
-  nameWithType: EventType.Data
-- uid: Telepathy.EventType.Disconnected
+  href: api/Telepathy.Connection.Status.html#Telepathy_Connection_Status_Connected
+  commentId: F:Telepathy.Connection.Status.Connected
+  fullName: Telepathy.Connection.Status.Connected
+  nameWithType: Connection.Status.Connected
+- uid: Telepathy.Connection.Status.Connecting
+  name: Connecting
+  href: api/Telepathy.Connection.Status.html#Telepathy_Connection_Status_Connecting
+  commentId: F:Telepathy.Connection.Status.Connecting
+  fullName: Telepathy.Connection.Status.Connecting
+  nameWithType: Connection.Status.Connecting
+- uid: Telepathy.Connection.Status.Disconnected
   name: Disconnected
-  href: api/Telepathy.EventType.html#Telepathy_EventType_Disconnected
-  commentId: F:Telepathy.EventType.Disconnected
-  fullName: Telepathy.EventType.Disconnected
-  nameWithType: EventType.Disconnected
+  href: api/Telepathy.Connection.Status.html#Telepathy_Connection_Status_Disconnected
+  commentId: F:Telepathy.Connection.Status.Disconnected
+  fullName: Telepathy.Connection.Status.Disconnected
+  nameWithType: Connection.Status.Disconnected
+- uid: Telepathy.Connection.Stop
+  name: Stop()
+  href: api/Telepathy.Connection.html#Telepathy_Connection_Stop
+  commentId: M:Telepathy.Connection.Stop
+  fullName: Telepathy.Connection.Stop()
+  nameWithType: Connection.Stop()
+- uid: Telepathy.Connection.Stop*
+  name: Stop
+  href: api/Telepathy.Connection.html#Telepathy_Connection_Stop_
+  commentId: Overload:Telepathy.Connection.Stop
+  isSpec: "True"
+  fullName: Telepathy.Connection.Stop
+  nameWithType: Connection.Stop
+- uid: Telepathy.Connection.stream
+  name: stream
+  href: api/Telepathy.Connection.html#Telepathy_Connection_stream
+  commentId: P:Telepathy.Connection.stream
+  fullName: Telepathy.Connection.stream
+  nameWithType: Connection.stream
+- uid: Telepathy.Connection.stream*
+  name: stream
+  href: api/Telepathy.Connection.html#Telepathy_Connection_stream_
+  commentId: Overload:Telepathy.Connection.stream
+  isSpec: "True"
+  fullName: Telepathy.Connection.stream
+  nameWithType: Connection.stream
+- uid: Telepathy.Connection.tcpClient
+  name: tcpClient
+  href: api/Telepathy.Connection.html#Telepathy_Connection_tcpClient
+  commentId: F:Telepathy.Connection.tcpClient
+  fullName: Telepathy.Connection.tcpClient
+  nameWithType: Connection.tcpClient
+- uid: Telepathy.ConnectMessage
+  name: ConnectMessage
+  href: api/Telepathy.ConnectMessage.html
+  commentId: T:Telepathy.ConnectMessage
+  fullName: Telepathy.ConnectMessage
+  nameWithType: ConnectMessage
+- uid: Telepathy.ConnectMessage.#ctor(System.Int32)
+  name: ConnectMessage(Int32)
+  href: api/Telepathy.ConnectMessage.html#Telepathy_ConnectMessage__ctor_System_Int32_
+  commentId: M:Telepathy.ConnectMessage.#ctor(System.Int32)
+  fullName: Telepathy.ConnectMessage.ConnectMessage(System.Int32)
+  nameWithType: ConnectMessage.ConnectMessage(Int32)
+- uid: Telepathy.ConnectMessage.#ctor*
+  name: ConnectMessage
+  href: api/Telepathy.ConnectMessage.html#Telepathy_ConnectMessage__ctor_
+  commentId: Overload:Telepathy.ConnectMessage.#ctor
+  isSpec: "True"
+  fullName: Telepathy.ConnectMessage.ConnectMessage
+  nameWithType: ConnectMessage.ConnectMessage
+- uid: Telepathy.DataMessage
+  name: DataMessage
+  href: api/Telepathy.DataMessage.html
+  commentId: T:Telepathy.DataMessage
+  fullName: Telepathy.DataMessage
+  nameWithType: DataMessage
+- uid: Telepathy.DataMessage.#ctor(System.Int32,System.Byte[])
+  name: DataMessage(Int32, Byte[])
+  href: api/Telepathy.DataMessage.html#Telepathy_DataMessage__ctor_System_Int32_System_Byte___
+  commentId: M:Telepathy.DataMessage.#ctor(System.Int32,System.Byte[])
+  name.vb: DataMessage(Int32, Byte())
+  fullName: Telepathy.DataMessage.DataMessage(System.Int32, System.Byte[])
+  fullName.vb: Telepathy.DataMessage.DataMessage(System.Int32, System.Byte())
+  nameWithType: DataMessage.DataMessage(Int32, Byte[])
+  nameWithType.vb: DataMessage.DataMessage(Int32, Byte())
+- uid: Telepathy.DataMessage.#ctor*
+  name: DataMessage
+  href: api/Telepathy.DataMessage.html#Telepathy_DataMessage__ctor_
+  commentId: Overload:Telepathy.DataMessage.#ctor
+  isSpec: "True"
+  fullName: Telepathy.DataMessage.DataMessage
+  nameWithType: DataMessage.DataMessage
+- uid: Telepathy.DataMessage.data
+  name: data
+  href: api/Telepathy.DataMessage.html#Telepathy_DataMessage_data
+  commentId: F:Telepathy.DataMessage.data
+  fullName: Telepathy.DataMessage.data
+  nameWithType: DataMessage.data
+- uid: Telepathy.DisconnectMessage
+  name: DisconnectMessage
+  href: api/Telepathy.DisconnectMessage.html
+  commentId: T:Telepathy.DisconnectMessage
+  fullName: Telepathy.DisconnectMessage
+  nameWithType: DisconnectMessage
+- uid: Telepathy.DisconnectMessage.#ctor(System.Int32)
+  name: DisconnectMessage(Int32)
+  href: api/Telepathy.DisconnectMessage.html#Telepathy_DisconnectMessage__ctor_System_Int32_
+  commentId: M:Telepathy.DisconnectMessage.#ctor(System.Int32)
+  fullName: Telepathy.DisconnectMessage.DisconnectMessage(System.Int32)
+  nameWithType: DisconnectMessage.DisconnectMessage(Int32)
+- uid: Telepathy.DisconnectMessage.#ctor*
+  name: DisconnectMessage
+  href: api/Telepathy.DisconnectMessage.html#Telepathy_DisconnectMessage__ctor_
+  commentId: Overload:Telepathy.DisconnectMessage.#ctor
+  isSpec: "True"
+  fullName: Telepathy.DisconnectMessage.DisconnectMessage
+  nameWithType: DisconnectMessage.DisconnectMessage
+- uid: Telepathy.ErrorMessage
+  name: ErrorMessage
+  href: api/Telepathy.ErrorMessage.html
+  commentId: T:Telepathy.ErrorMessage
+  fullName: Telepathy.ErrorMessage
+  nameWithType: ErrorMessage
+- uid: Telepathy.ErrorMessage.#ctor(System.Int32,System.Exception)
+  name: ErrorMessage(Int32, Exception)
+  href: api/Telepathy.ErrorMessage.html#Telepathy_ErrorMessage__ctor_System_Int32_System_Exception_
+  commentId: M:Telepathy.ErrorMessage.#ctor(System.Int32,System.Exception)
+  fullName: Telepathy.ErrorMessage.ErrorMessage(System.Int32, System.Exception)
+  nameWithType: ErrorMessage.ErrorMessage(Int32, Exception)
+- uid: Telepathy.ErrorMessage.#ctor*
+  name: ErrorMessage
+  href: api/Telepathy.ErrorMessage.html#Telepathy_ErrorMessage__ctor_
+  commentId: Overload:Telepathy.ErrorMessage.#ctor
+  isSpec: "True"
+  fullName: Telepathy.ErrorMessage.ErrorMessage
+  nameWithType: ErrorMessage.ErrorMessage
+- uid: Telepathy.ErrorMessage.exception
+  name: exception
+  href: api/Telepathy.ErrorMessage.html#Telepathy_ErrorMessage_exception
+  commentId: F:Telepathy.ErrorMessage.exception
+  fullName: Telepathy.ErrorMessage.exception
+  nameWithType: ErrorMessage.exception
 - uid: Telepathy.Logger
   name: Logger
   href: api/Telepathy.Logger.html
@@ -268,15 +419,12 @@ references:
   commentId: T:Telepathy.Message
   fullName: Telepathy.Message
   nameWithType: Message
-- uid: Telepathy.Message.#ctor(System.Int32,Telepathy.EventType,System.Byte[])
-  name: Message(Int32, EventType, Byte[])
-  href: api/Telepathy.Message.html#Telepathy_Message__ctor_System_Int32_Telepathy_EventType_System_Byte___
-  commentId: M:Telepathy.Message.#ctor(System.Int32,Telepathy.EventType,System.Byte[])
-  name.vb: Message(Int32, EventType, Byte())
-  fullName: Telepathy.Message.Message(System.Int32, Telepathy.EventType, System.Byte[])
-  fullName.vb: Telepathy.Message.Message(System.Int32, Telepathy.EventType, System.Byte())
-  nameWithType: Message.Message(Int32, EventType, Byte[])
-  nameWithType.vb: Message.Message(Int32, EventType, Byte())
+- uid: Telepathy.Message.#ctor(System.Int32)
+  name: Message(Int32)
+  href: api/Telepathy.Message.html#Telepathy_Message__ctor_System_Int32_
+  commentId: M:Telepathy.Message.#ctor(System.Int32)
+  fullName: Telepathy.Message.Message(System.Int32)
+  nameWithType: Message.Message(Int32)
 - uid: Telepathy.Message.#ctor*
   name: Message
   href: api/Telepathy.Message.html#Telepathy_Message__ctor_
@@ -290,18 +438,6 @@ references:
   commentId: F:Telepathy.Message.connectionId
   fullName: Telepathy.Message.connectionId
   nameWithType: Message.connectionId
-- uid: Telepathy.Message.data
-  name: data
-  href: api/Telepathy.Message.html#Telepathy_Message_data
-  commentId: F:Telepathy.Message.data
-  fullName: Telepathy.Message.data
-  nameWithType: Message.data
-- uid: Telepathy.Message.eventType
-  name: eventType
-  href: api/Telepathy.Message.html#Telepathy_Message_eventType
-  commentId: F:Telepathy.Message.eventType
-  fullName: Telepathy.Message.eventType
-  nameWithType: Message.eventType
 - uid: Telepathy.SafeDictionary`2
   name: SafeDictionary<TKey, TValue>
   href: api/Telepathy.SafeDictionary-2.html
@@ -524,48 +660,12 @@ references:
   isSpec: "True"
   fullName: Telepathy.Server.Disconnect
   nameWithType: Server.Disconnect
-- uid: Telepathy.Server.GetClient(System.Int32)
-  name: GetClient(Int32)
-  href: api/Telepathy.Server.html#Telepathy_Server_GetClient_System_Int32_
-  commentId: M:Telepathy.Server.GetClient(System.Int32)
-  fullName: Telepathy.Server.GetClient(System.Int32)
-  nameWithType: Server.GetClient(Int32)
-- uid: Telepathy.Server.GetClient*
-  name: GetClient
-  href: api/Telepathy.Server.html#Telepathy_Server_GetClient_
-  commentId: Overload:Telepathy.Server.GetClient
-  isSpec: "True"
-  fullName: Telepathy.Server.GetClient
-  nameWithType: Server.GetClient
-- uid: Telepathy.Server.GetConnectionInfo(System.Int32,System.String@)
-  name: GetConnectionInfo(Int32, out String)
-  href: api/Telepathy.Server.html#Telepathy_Server_GetConnectionInfo_System_Int32_System_String__
-  commentId: M:Telepathy.Server.GetConnectionInfo(System.Int32,System.String@)
-  name.vb: GetConnectionInfo(Int32, ByRef String)
-  fullName: Telepathy.Server.GetConnectionInfo(System.Int32, out System.String)
-  fullName.vb: Telepathy.Server.GetConnectionInfo(System.Int32, ByRef System.String)
-  nameWithType: Server.GetConnectionInfo(Int32, out String)
-  nameWithType.vb: Server.GetConnectionInfo(Int32, ByRef String)
-- uid: Telepathy.Server.GetConnectionInfo*
-  name: GetConnectionInfo
-  href: api/Telepathy.Server.html#Telepathy_Server_GetConnectionInfo_
-  commentId: Overload:Telepathy.Server.GetConnectionInfo
-  isSpec: "True"
-  fullName: Telepathy.Server.GetConnectionInfo
-  nameWithType: Server.GetConnectionInfo
-- uid: Telepathy.Server.NextConnectionId
-  name: NextConnectionId()
-  href: api/Telepathy.Server.html#Telepathy_Server_NextConnectionId
-  commentId: M:Telepathy.Server.NextConnectionId
-  fullName: Telepathy.Server.NextConnectionId()
-  nameWithType: Server.NextConnectionId()
-- uid: Telepathy.Server.NextConnectionId*
-  name: NextConnectionId
-  href: api/Telepathy.Server.html#Telepathy_Server_NextConnectionId_
-  commentId: Overload:Telepathy.Server.NextConnectionId
-  isSpec: "True"
-  fullName: Telepathy.Server.NextConnectionId
-  nameWithType: Server.NextConnectionId
+- uid: Telepathy.Server.MaxConnections
+  name: MaxConnections
+  href: api/Telepathy.Server.html#Telepathy_Server_MaxConnections
+  commentId: F:Telepathy.Server.MaxConnections
+  fullName: Telepathy.Server.MaxConnections
+  nameWithType: Server.MaxConnections
 - uid: Telepathy.Server.NoDelay
   name: NoDelay
   href: api/Telepathy.Server.html#Telepathy_Server_NoDelay
@@ -588,12 +688,12 @@ references:
   isSpec: "True"
   fullName: Telepathy.Server.Send
   nameWithType: Server.Send
-- uid: Telepathy.Server.Start(System.Int32,System.Int32)
-  name: Start(Int32, Int32)
-  href: api/Telepathy.Server.html#Telepathy_Server_Start_System_Int32_System_Int32_
-  commentId: M:Telepathy.Server.Start(System.Int32,System.Int32)
-  fullName: Telepathy.Server.Start(System.Int32, System.Int32)
-  nameWithType: Server.Start(Int32, Int32)
+- uid: Telepathy.Server.Start(System.Int32)
+  name: Start(Int32)
+  href: api/Telepathy.Server.html#Telepathy_Server_Start_System_Int32_
+  commentId: M:Telepathy.Server.Start(System.Int32)
+  fullName: Telepathy.Server.Start(System.Int32)
+  nameWithType: Server.Start(Int32)
 - uid: Telepathy.Server.Start*
   name: Start
   href: api/Telepathy.Server.html#Telepathy_Server_Start_
@@ -614,3 +714,47 @@ references:
   isSpec: "True"
   fullName: Telepathy.Server.Stop
   nameWithType: Server.Stop
+- uid: Telepathy.Transport
+  name: Transport
+  href: api/Telepathy.Transport.html
+  commentId: T:Telepathy.Transport
+  fullName: Telepathy.Transport
+  nameWithType: Transport
+- uid: Telepathy.Transport.GetNextMessage
+  name: GetNextMessage()
+  href: api/Telepathy.Transport.html#Telepathy_Transport_GetNextMessage
+  commentId: M:Telepathy.Transport.GetNextMessage
+  fullName: Telepathy.Transport.GetNextMessage()
+  nameWithType: Transport.GetNextMessage()
+- uid: Telepathy.Transport.GetNextMessage*
+  name: GetNextMessage
+  href: api/Telepathy.Transport.html#Telepathy_Transport_GetNextMessage_
+  commentId: Overload:Telepathy.Transport.GetNextMessage
+  isSpec: "True"
+  fullName: Telepathy.Transport.GetNextMessage
+  nameWithType: Transport.GetNextMessage
+- uid: Telepathy.Transport.messageQueue
+  name: messageQueue
+  href: api/Telepathy.Transport.html#Telepathy_Transport_messageQueue
+  commentId: F:Telepathy.Transport.messageQueue
+  fullName: Telepathy.Transport.messageQueue
+  nameWithType: Transport.messageQueue
+- uid: Telepathy.Transport.messageQueueSizeWarning
+  name: messageQueueSizeWarning
+  href: api/Telepathy.Transport.html#Telepathy_Transport_messageQueueSizeWarning
+  commentId: F:Telepathy.Transport.messageQueueSizeWarning
+  fullName: Telepathy.Transport.messageQueueSizeWarning
+  nameWithType: Transport.messageQueueSizeWarning
+- uid: Telepathy.Transport.ProcessMessages(System.Int32,Telepathy.Connection)
+  name: ProcessMessages(Int32, Connection)
+  href: api/Telepathy.Transport.html#Telepathy_Transport_ProcessMessages_System_Int32_Telepathy_Connection_
+  commentId: M:Telepathy.Transport.ProcessMessages(System.Int32,Telepathy.Connection)
+  fullName: Telepathy.Transport.ProcessMessages(System.Int32, Telepathy.Connection)
+  nameWithType: Transport.ProcessMessages(Int32, Connection)
+- uid: Telepathy.Transport.ProcessMessages*
+  name: ProcessMessages
+  href: api/Telepathy.Transport.html#Telepathy_Transport_ProcessMessages_
+  commentId: Overload:Telepathy.Transport.ProcessMessages
+  isSpec: "True"
+  fullName: Telepathy.Transport.ProcessMessages
+  nameWithType: Transport.ProcessMessages
