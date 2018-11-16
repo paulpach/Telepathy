@@ -20,6 +20,9 @@ build:
   project: Telepathy.sln
   verbosity: minimal
 
+init:
+  - ps: iex ((new-object net.webclient).DownloadString('https://raw.githubusercontent.com/appveyor/ci/master/scripts/enable-rdp.ps1'))
+
 artifacts:
   - path: '**\*.nupkg'
 
@@ -34,14 +37,28 @@ image: Visual Studio 2017
 test_script:
   - '%USERPROFILE%\.nuget\packages\opencover\4.6.519\tools\OpenCover.Console.exe -returntargetcode -register:user -target:"nunit3-console.exe" -targetargs:Telepathy.Tests\bin\%CONFIGURATION%\net35\Telepathy.Tests.dll -output:"coverage.xml" -filter:"+[Telepathy*]* -[Telepathy.Tests*]* "'
 
+install:
+  - cinst docfx
+
+environment:
+  github_email:
+    secure: 5f2P5xlb1MIulsEro35xNsZas33NI4e+xRCkfV/MmCw=
+  github_access_token:
+    secure: j4LIFPAEoZYOA8J4e3q/Tt0ABHIKBl+vUK7wwS/PmtJR1nYdHMa8cLy6o3EYUoOB
+
 after_test:
-  - ps: |
-      $env:PATH = 'C:\msys64\usr\bin;' + $env:PATH
-      Invoke-WebRequest -Uri 'https://codecov.io/bash' -OutFile codecov.sh
-      bash codecov.sh -f "coverage.xml" 
+  - ps: Invoke-WebRequest -Uri 'https://codecov.io/bash' -OutFile codecov.sh
+  - bash codecov.sh -f "coverage.xml" 
 
 deploy:
   - provider: Environment
     name: nuget-telepathy
     on:
       branch: master
+
+deploy_script:
+  - git config --global credential.helper "store"
+  - ps: Add-Content "$HOME\.git-credentials" "https://$($env:github_access_token):x-oauth-basic@github.com`n"
+  - git config --global user.email %github_email%
+  - git config --global user.name "Paul Pacheco"
+  - ps: ./releaseDocs.ps1
