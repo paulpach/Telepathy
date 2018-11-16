@@ -55,7 +55,7 @@ namespace Telepathy
         { 
             get 
             {
-                return connection.status == Connection.Status.Connected;
+                return connection.status == Connection.Status.Connecting;
             } 
         }
 
